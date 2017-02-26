@@ -3,7 +3,6 @@
 body {
     color: #555;
     background-color: #f7f8fa;
-    overflow-x: hidden;
 }
 
 h1,
@@ -264,6 +263,9 @@ figure {
     }
     #search-results {
         width: 100%;
+    }
+    #article-header {
+        overflow-x: hidden;
     }
 }
 
