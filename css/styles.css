@@ -264,7 +264,7 @@ figure {
     #search-results {
         width: 100%;
     }
-    #article-header {
+    .left-content .ui.segments {
         overflow-x: hidden;
     }
 }
