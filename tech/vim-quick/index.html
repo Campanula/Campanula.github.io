@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8"> <meta name="generator" content="Hugo 0.18.1" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta name="author" content="ChaneyZorn">
+    
+    <meta name="description" content="&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&lt;p&gt;本文翻译自：&lt;code&gt;http://bencrowder.net/files/vim-fu/&lt;/code&gt;，参考了 &lt;a href=&#34;http://blog.aboutc.net/vim/8/vim-chinese-documentation&#34; target=&#34;_blank&#34;&gt;VIM中文帮助&lt;/a&gt;、 Google翻译结果和实际操作结果，对原文的部分内容重新整理，删除和添加了部分内容并加入了一些技巧。如有翻译不当或在实际操作中出现的任何问题都可以在文章后回复。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+
+<meta name="keywords" content="vim">
+
+
+<meta property="og:title" content="VIM速查表 - 吾月">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://moonye.me/tech/vim-quick/">
+<meta property="og:image" content="http://moonye.me/images/default.png">
+<meta property="og:site_name" content="吾月">
+<meta property="og:description" content="&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&lt;p&gt;本文翻译自：&lt;code&gt;http://bencrowder.net/files/vim-fu/&lt;/code&gt;，参考了 &lt;a href=&#34;http://blog.aboutc.net/vim/8/vim-chinese-documentation&#34; target=&#34;_blank&#34;&gt;VIM中文帮助&lt;/a&gt;、 Google翻译结果和实际操作结果，对原文的部分内容重新整理，删除和添加了部分内容并加入了一些技巧。如有翻译不当或在实际操作中出现的任何问题都可以在文章后回复。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta property="og:locale" content="zh-CN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="吾月">
+<meta name="twitter:url" content="http://moonye.me/tech/vim-quick/">
+<meta name="twitter:title" content="VIM速查表 - 吾月">
+<meta name="twitter:description" content="&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&lt;p&gt;本文翻译自：&lt;code&gt;http://bencrowder.net/files/vim-fu/&lt;/code&gt;，参考了 &lt;a href=&#34;http://blog.aboutc.net/vim/8/vim-chinese-documentation&#34; target=&#34;_blank&#34;&gt;VIM中文帮助&lt;/a&gt;、 Google翻译结果和实际操作结果，对原文的部分内容重新整理，删除和添加了部分内容并加入了一些技巧。如有翻译不当或在实际操作中出现的任何问题都可以在文章后回复。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;">
+<meta name="twitter:image" content="http://moonye.me/images/default.png">
+
+
+    
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.9.0/styles/docco.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.7/semantic.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/lightgallery/1.3.9/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+    
+    <title>VIM速查表 | 吾月</title>
+</head>
+
+<body>
+    <header>
+    <div id="header-content">
+        <div id="nav-container" class="ui circular labels">
+            <div id="nav-menu" class="ui top fixed borderless menu">
+                <a id="brand" class="item mobile" href="http://moonye.me/">
+                    <b><i class="home icon"></i>吾月</b>
+                </a>
+                <div class="ui dropdown item">
+                    <a href="/archive/"><i class="archive icon"></i> 文章 <span class="ui label">37</span></a>
+                    <div class="menu">
+                        <div class="header"><a href="/tech/"><i class="desktop icon"></i> 技术</a></div>
+                        <div class="divider"></div>
+                        <a class="disabled item" href="/tags/java/">Java</a>
+                        <a class="disabled item">GNU/Linux</a>
+                        <div class="header"><a href="/essay/"><i class="write icon"></i> 随笔</a></div>
+                        <div class="divider"></div>
+                        <a class="disabled item">逐月</a>
+                        <a class="disabled item">流光</a>
+                        <a class="disabled item">无想</a>
+                    </div>
+                </div>
+                <div class="ui dropdown disabled item" href="http://moonye.me/">
+                    <a href="/topics/"><i class="block layout icon"></i> 专题 <span class="ui label">0</span></a>
+                    <div class="menu">
+                        <div class="disabled item">暂无</div>
+                    </div>
+                </div>
+                <div class="ui dropdown disabled item" href="http://moonye.me/">
+                    <a href="/projects/"><i class="github alternate icon"></i> 项目 <span class="ui label">0</span></a>
+                    <div class="menu">
+                        <div class="disabled item">暂无</div>
+                    </div>
+                </div>
+                <a class="ui dropdown disabled item" href="http://moonye.me/">
+                    <i class="user icon"></i><span class="text">关于</span>
+                </a>
+                <div id="search" class="ui search item mobile">
+                    <input id="search-input" class="prompt" type="text" placeholder="Search..." autocomplete="off">
+                    <div id="search-results" class="results animation"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <main class="main content">
+        
+<div id="main-content">
+    <div class="left-content">
+        <div class="ui segments">
+    <div class="ui segment">
+        <a id="session-link" class="ui blue right ribbon label" href="/tech/">技术</a>
+        <h1>VIM速查表</h1>
+    </div>
+    <div id="article-info" class="ui segment">
+        <div class="ui breadcrumb">
+            <div class="section"><i class="calendar icon"></i> 2017-02-12 22:59</div>
+            <div id="word-count" class="section"><span>4885 Words</span></div>
+            
+            <div id="article-tags" class="section underline">
+                <i class="tag icon"></i><a id="article-tag" href="/tags/vim/">vim</a> 
+            </div>
+            
+        </div>
+    </div>
+    <div id="article-content" class="ui segment"><h2 id="前言">前言</h2>
+
+<p>本文翻译自：<code>http://bencrowder.net/files/vim-fu/</code>，参考了 <a href="http://blog.aboutc.net/vim/8/vim-chinese-documentation" target="_blank">VIM中文帮助</a>、 Google翻译结果和实际操作结果，对原文的部分内容重新整理，删除和添加了部分内容并加入了一些技巧。如有翻译不当或在实际操作中出现的任何问题都可以在文章后回复。</p>
+
+<p></p>
+
+<blockquote>
+<p>注：<br />
+1. 文中以<code>:</code>开头为<strong>命令行模式</strong>，未注明均为<strong>普通模式</strong>。(了解vim模式<code>:help vim-modes</code>)<br />
+2. <code>&lt;C-r&gt;</code>意为<code>Ctrl + r</code>，其他同理。<br />
+3. 主要关注点：<strong>光标的移动</strong>，<strong>文本的编辑</strong>和<strong>多文件的切换</strong>。<br />
+4. 有两个不得不提的键:<code>&lt;TAB&gt;</code><strong>各种模式的下的补全</strong>和<code>&lt;ESC&gt;</code><strong>各种模式下的切换</strong>。无论你是使用什么终端，或是使用什么编辑器，这两个键都显得格外重要。</p>
+</blockquote>
+
+<hr />
+
+<h2 id="帮助">帮助</h2>
+
+<blockquote>
+<p><code>:help</code> 加载帮助<br />
+<code>:help j</code> 获取&rdquo;j&rdquo;命令的相关帮助<br />
+<code>:help :split</code> 获取&rdquo;:split&rdquo;命令帮助<br />
+<code>:help z*</code> 获取以&rdquo;z&rdquo;开头的相关命令帮助<br />
+<code>:help function-list</code> 显示vim提供的函数列表</p>
+</blockquote>
+
+<hr />
+
+<h2 id="撤销-恢复和重复">撤销,恢复和重复</h2>
+
+<blockquote>
+<p><code>u</code> 撤销(undo)<br />
+<code>&lt;C-r&gt;</code> 恢复撤销前的状态<br />
+<code>:redo</code> 恢复(同<code>&lt;C-r&gt;</code>)<br />
+<code>.</code> 重复最后一个命令<br />
+<code>[n][command]</code> 重复[n]次[command]命令<br />
+<code>:qa</code> 退出所有窗口<br />
+<code>:wqa</code> 保存退出所有窗口</p>
+</blockquote>
+
+<hr />
+
+<h2 id="移动光标-hjkl">移动光标：hjkl</h2>
+
+<blockquote>
+<pre><code>     ^
+     k
+&lt; h     l &gt;
+     j
+     v
+</code></pre>
+</blockquote>
+
+<hr />
+
+<h2 id="移动光标-行">移动光标：行</h2>
+
+<blockquote>
+<p><code>0</code> 跳转到当前行首<br />
+<code>^</code> 跳转到当前行的第一个非空字符(空格/TAB)<br />
+<code>$</code> 跳转到当前行的末尾<br />
+<code>gg</code> 跳转到文件第一行(goto)<br />
+<code>G</code> 跳转到文件最后一行<br />
+<code>47G</code> 跳转到文件第47行<br />
+<code>:47</code> 跳转到文件第47行(同<code>47G</code>)</p>
+</blockquote>
+
+<hr />
+
+<h2 id="移动光标-字符">移动光标：字符</h2>
+
+<blockquote>
+<p><code>f[char]</code> 跳转到第一个[char]字符(find)<br />
+<code>3f[char]</code> 跳转到第三个[char]字符<br />
+<code>F[char]</code> 向左跳转到第一个[char]字符<br />
+<code>t[char]</code> 跳转到第一个[char]字符的前一个字符(till before - right)<br />
+<code>T[char]</code> 向左跳转到第一个[char]字符的后一个字符(till after - left)<br />
+<code>;</code> 重复最后一次的 f/F/t/T 移动命令</p>
+</blockquote>
+
+<hr />
+
+<h2 id="移动光标-单词和文本块">移动光标：单词和文本块</h2>
+
+<blockquote>
+<p><code>w</code> 跳转到下一个单词的开头(word)<br />
+<code>3w</code> 跳转到第三个单词的开头<br />
+<code>e</code> 跳转到下一个单词的结尾(end of word)<br />
+<code>b</code> 跳转到上一个单词的开头(backward beginning)<br />
+<code>(</code> 跳转到上一个句子的开头<br />
+<code>)</code> 跳转到下一个句子的开头<br />
+<code>{</code> 跳转到上一个段落的开头<br />
+<code>}</code> 跳转到下一个段落的开头</p>
+</blockquote>
+
+<hr />
+
+<h2 id="移动光标-代码块">移动光标：代码块</h2>
+
+<blockquote>
+<p><code>%</code> 在当前大括号/中括号/小括号的开始位置<code>{/[/(</code>和结束位置<code>}/]/)</code>之间跳转<br />
+<code>[[</code> 跳转到上一个函数的开头(如果光标在函数体内则跳转到当前函数的开头)<br />
+<code>]]</code> 跳转到下一个函数的开头<br />
+<code>[{</code> 跳转到当前程序块的开头(当前程序块为当前程序的上一层，不是固定的)<br />
+<code>]}</code> 跳转到当前程序块的结尾</p>
+</blockquote>
+
+<pre><code>更多移动光标命令请查看&quot;:help cursor-motions&quot;
+</code></pre>
+
+<hr />
+
+<h2 id="搜索">搜索</h2>
+
+<blockquote>
+<p><code>/[word]</code> 搜索[word]字符串<br />
+<code>?[word]</code> 向上搜索[word]字符串<br />
+<code>n</code> 跳转到下一个匹配的字符串(保持最后一个搜索命令的方向)(next match)<br />
+<code>N</code> 跳转到上一个匹配的字符串(保持最后一个搜索命令的方向)<br />
+<code>*</code> 搜索当前光标下的单词<br />
+<code>#</code> 向上搜索当前光标下的单词</p>
+</blockquote>
+
+<hr />
+
+<h2 id="插入模式">插入模式</h2>
+
+<blockquote>
+<p><code>i</code> 在光标位置前进入插入模式<br />
+<code>I</code> 在当前行的第一个非空字符进入插入模式<br />
+<code>o</code> 在当前行的下一行添加一个空行进入插入模式<br />
+<code>O</code> 在当前行的上一行添加一个空行进入插入模式<br />
+<code>a</code> 在光标位置后进入插入模式<br />
+<code>A</code> 在当前行的末尾进入插入模式<br />
+<code>s</code> 删除光标位置下的字符并进入插入模式<br />
+<code>S</code> 删除当前行内容并进入插入模式</p>
+</blockquote>
+
+<p><br></p>
+
+<blockquote>
+<p>注：插入模式下使用 <code>&lt;C-o&gt;</code> 可以进入<strong>插入普通模式</strong>(窗口底部会由<code>-- INSERT --</code>变为<code>-- (insert) --</code>)，允许你执行完一个命令后，再返回插入模式。</p>
+
+<p>如：在<strong>插入模式</strong>下选择保存在寄存器中的内容进行粘贴时，可以<code>&lt;C-o&gt;</code>, <code>:reg</code>, <code>&lt;C-r&gt;3</code>，其中：<code>:reg</code>是查看寄存器列表，<code>&lt;C-r&gt;3</code>是把寄存器列表中编号为<code>3</code>的内容粘贴在此处。</p>
+</blockquote>
+
+<hr />
+
+<h2 id="删除文本">删除文本</h2>
+
+<blockquote>
+<p><code>x</code> 删除光标位置下的字符<br />
+<code>dw</code> 删除光标之后的单词剩余部分(delete word)<br />
+<code>diw</code> 删除一个单词<br />
+<code>dd</code> 删除当前行<br />
+<code>D</code> 删除从光标位置到当前行的末尾(同<code>d$</code>)<br />
+<code>df[char]</code> 删除从光标位置到[char]字符(delete find [char])<br />
+<code>d)</code> 删除从光标位置到下一个句子的开始<br />
+<code>d}</code> 删除从光标位置到该段落的末尾<br />
+<code>di{</code> 删除花括号之间的内容(delete inner {})(同<code>diB</code>)<br />
+<code>di(</code> 删除小括号之间的内容(delete inner ())(同<code>dib</code>)<br />
+<code>dit</code> 删除闭合标签之间的内容(html/xml等标签，delete inner tag)<br />
+<code>dat</code> 删除左右尖括号及之间的内容(delete a tag)<br />
+<code>da&lt;</code> 删除左右尖括号及之间的内容(delete a &lt;&gt;)<br />
+<code>di&quot;</code> 删除引号之间的内容(delete inner &ldquo;&rdquo;)<br />
+<code>da&quot;</code> 删除左右引号及之间的内容(delete a &ldquo;&rdquo;)<br />
+<code>:5,10d</code> 删除5-10行<br />
+<code>3dd</code> 删除从当前行开始的3行<br />
+<code>&lt;C-w&gt;</code> 删除光标前的一个单词(插入模式)<br />
+<code>&lt;C-u&gt;</code> 从光标位置删除到行首(插入模式)</p>
+</blockquote>
+
+<p><br></p>
+
+<blockquote>
+<p>这里加 shift 大写，意为行尾<br />
+注：<code>d</code>/<code>c</code>开头的命令会将删除的文本放到寄存器(通过<code>:reg</code>查看)，可以理解为剪切。<br />
+关于&rdquo;a&rdquo;n和&rdquo;i&rdquo;nner可以参考<code>:help object-select</code><strong>文本对象选择</strong>部分<br />
+另：一般向右的操作包含光标下的字符，向左的操作不包含光标下的字符</p>
+</blockquote>
+
+<hr />
+
+<h2 id="更改文本">更改文本</h2>
+
+<blockquote>
+<p><code>J</code> 将下一行合并的当前行的末尾(Join line)<br />
+<code>3,9j</code> 合并3-9行<br />
+<code>~</code> 切换光标下字符的大小写<br />
+<code>u</code> 更改选定的文本为小写(可视模式)<br />
+<code>U</code> 更改选定的文本为大写(可视模式)<br />
+<code>&lt;C-a&gt;</code> 把当前光标下或之后的数值加1<br />
+<code>&lt;C-x&gt;</code> 把当前光标下或之后的数值减1<br />
+<code>r[char]</code> 替换光标下的字符为[char]. (replace)<br />
+<code>R</code> 进入替换模式<br />
+<code>cw</code> 删除光标之后的单词剩余部分并进入插入模式(change word)<br />
+<code>cc</code> 删除当前行内容并进入插入模式(同<code>S</code>)<br />
+<code>C</code> 删除从光标位置到当前行的末尾并进入插入模式(同<code>c$</code>)<br />
+<code>cf[char]</code> 删除从光标位置到[char]字符并进入插入模式</p>
+</blockquote>
+
+<p><br></p>
+
+<blockquote>
+<p>这里<code>c</code>开头加 shift 大写，意为行尾<br />
+<code>c</code>开头&rdquo;change&rdquo;更改(删除并插入)，<code>d</code>开头&rdquo;delete&rdquo;删除，和<code>y</code>开头&rdquo;yank/copy&rdquo;，格式相同，可相互参考使用</p>
+</blockquote>
+
+<hr />
+
+<h2 id="缩进文本">缩进文本</h2>
+
+<blockquote>
+<p><code>&gt;&gt;</code> 缩进当前行<br />
+<code>&lt;&lt;</code> 向左缩进当前行<br />
+<code>&lt;C-d&gt;</code> 缩进当前行(插入模式)<br />
+<code>&lt;C-t&gt;</code> 向左缩进当前行(插入模式)<br />
+<code>:3,9&gt;&gt;&gt;&gt;&gt;</code> 将3-9行缩进5个TAB<br />
+<code>&gt;</code> 缩进选定的行(可视模式)<br />
+<code>&lt;</code> 向左缩进选定的行(可视模式)<br />
+<code>&gt;i{</code> 缩进花括号之间的内容(indent inner {})(同<code>&gt;iB</code>)<br />
+<code>&gt;a{</code> 缩进花括号及之间的内容(indent a {})(同<code>&gt;aB</code>)<br />
+<code>=}</code> 缩进当前段落<br />
+<code>gg=G</code> 全文缩进/格式化</p>
+</blockquote>
+
+<hr />
+
+<h2 id="复制和粘贴">复制和粘贴</h2>
+
+<blockquote>
+<p><code>v</code> 进入可视模式，以字符为单位选择<br />
+<code>V</code> 进入可视模式，以行为单位选择<br />
+<code>&lt;C-v&gt;</code> 进入列块可视模式(如果映射<code>&lt;C-v&gt;</code>为&rdquo;粘贴&rdquo;时请注意)<br />
+<code>gv</code> 重新选择最后选定的区域<br />
+<code>y</code> 抽出选择的文本到寄存器(可视模式)(yank/copy)<br />
+<code>&quot;+y</code> 抽出选择的文本到系统剪切板(可视模式)(好像不太好使)<br />
+<code>:co 10</code> 复制当前行到第11行(copy)<br />
+<code>:co</code> . 复制当前行到下一行(同<code>yyp</code>)<br />
+<code>:5,10co 20</code> 复制5-10行到第21行<br />
+<code>yy</code> 复制当前行<br />
+<code>y$</code> 复制到行尾<br />
+<code>yw</code> 复制光标之后的单词剩余部分(yank word)<br />
+<code>yb</code> 复制光标之前的单词剩余部分<br />
+<code>yiw</code> 复制一个单词<br />
+<code>yip</code> 复制当前段落(yank inner paragraph)<br />
+<code>yas</code> 复制一个句子(yank a sentence)<br />
+<code>yi&lt;</code> 复制尖括号之间的内容(Yank inner &lt;&gt;)<br />
+<code>11y</code> 复制11行<br />
+<code>p</code> 粘贴(paste)<br />
+<code>P</code> 粘贴到光标前<br />
+<code>&lt;C-r&gt;&quot;</code> 粘贴(插入模式)<br />
+<code>&quot;ayy</code> 复制当前行到寄存器&rdquo;a&rdquo;(可使用范围&rdquo;a-z&rdquo;)<br />
+<code>&quot;ap</code> 粘贴从寄存器&rdquo;a&rdquo;</p>
+</blockquote>
+
+<hr />
+
+<h2 id="文件和目录">文件和目录</h2>
+
+<blockquote>
+<p><code>:e!</code> 重新载入当前文件，放弃任何更改(edit)<br />
+<code>:e [file]</code> 编辑文件[file]<br />
+<code>:r [file]</code> 将[file]文件内容插入到下一行(read)<br />
+<code>:r !date</code> 将&rdquo;date&rdquo;命令返回的结果插入到下一行<br />
+<code>:pwd</code> 输出当前工作目录到状态栏<br />
+<code>:cd [dir]</code> 切换当前工作目录到[dir]<br />
+<code>&lt;C-g&gt;</code> 显示当前文件信息(文件名及行数等)<br />
+<code>gf</code> 打开光标下的文件路径(相当于以<code>:e</code>的方式打开)<br />
+<code>ga</code> 显示光标下的字符在当前使用的 encoding 下的内码<br />
+<code>:saveas [file]</code> 另存为[file]文件(文件不存在，使用<code>:saveas!</code>覆盖已存在文件)<br />
+<code>:w &gt; [file]</code> 将当前文件内容写入[file]文件(文件不存在，同<code>:saveas</code>)<br />
+<code>:3,9w &gt;&gt; [file]</code> 将3-9行的内容追加到[file]文件(文件已存在)<br />
+<code>:w</code> 保存当前文件<br />
+<code>:x</code> 保存并退出<br />
+<code>:q!</code> 不保存退出<br />
+<code>:qa!</code> 强行退出所有文件，不保存</p>
+
+<p><code>:sh</code>  切换到shell终端，使用<code>&lt;C-d&gt;</code>返回<br />
+<code>&lt;C-z&gt;</code> 同上，使用<code>fg</code>返回(属终端快捷键范畴)</p>
+</blockquote>
+
+<hr />
+
+<h2 id="缓冲区">缓冲区</h2>
+
+<blockquote>
+<p><code>:ls</code> 查看缓冲区列表(同 <code>:files</code>, 或 <code>:buffers</code>)<br />
+<code>:bn</code> 编辑下一个缓冲区(buffer next)<br />
+<code>:bp</code> 编辑上一个缓冲区(buffer previous)<br />
+<code>:b[n]</code> 编辑缓冲区列表中第[n]个缓冲区<br />
+<code>:b &lt;Tab&gt;</code> 选择要切换的 buffer 文件<br />
+<code>:bd</code> 卸载当前缓冲区(buffer delete)</p>
+</blockquote>
+
+<hr />
+
+<h2 id="分割窗口">分割窗口</h2>
+
+<blockquote>
+<p><code>:sp</code> 水平分割当前窗口(split)<br />
+<code>:vs</code> 垂直分割当前窗口(vertical split)<br />
+<code>:sp [file]</code> 水平分割一个新窗口，并编辑文件[file]<br />
+<code>:close</code> 关闭当前窗口(同<code>:q</code>)<br />
+<code>:only</code> 关闭其他窗口<br />
+<code>&lt;C-w&gt; h</code> 光标移动到左边一个窗口<br />
+<code>&lt;C-w&gt; j</code> 光标移动到下边一个窗口<br />
+<code>&lt;C-w&gt; k</code> 光标移动到上边一个窗口<br />
+<code>&lt;C-w&gt; l</code> 光标移动到右边一个窗口<br />
+<code>&lt;C-w&gt; w</code> 光标移动到下一个窗口</p>
+</blockquote>
+
+<hr />
+
+<h2 id="标签页">标签页</h2>
+
+<blockquote>
+<p><code>:tabs</code> 查看标签页列表<br />
+<code>:tabe</code> 打开一个新标签页(tab edit)(同<code>:tabnew</code>)<br />
+<code>:tabe</code> [file] 打开一个新标签页，并编辑文件[file].<br />
+<code>:tabc</code> 关闭当前标签页(tab close)(同<code>:q</code>)<br />
+<code>gt</code> 转到下一个标签页(go to)(同<code>:tabn</code>/<code>:tabnext</code>)<br />
+<code>gT</code> 转到上一个标签页(同<code>:tabp</code>/<code>:tabprevious</code>)</p>
+</blockquote>
+
+<hr />
+
+<h2 id="滚屏">滚屏</h2>
+
+<blockquote>
+<p><code>H</code> 跳转到屏幕的顶部(home)<br />
+<code>M</code> 跳转到屏幕的中间(middle)<br />
+<code>L</code> 跳转到屏幕的底部(low)<br />
+<code>zt</code> 将当前行滚动至屏幕顶部(top)<br />
+<code>zz</code> 将当前行滚动至屏幕中间(同<code>z.</code>)<br />
+<code>zb</code> 将当前行滚动至屏幕中间(bottom)(同<code>z-</code>)<br />
+<code>&lt;C-f&gt;</code> 滚动至下一页(forwards)<br />
+<code>&lt;C-b&gt;</code> 滚动至上一页(backwards)<br />
+<code>&lt;C-d&gt;</code> 向下滚动半屏(downwards)<br />
+<code>&lt;C-u&gt;</code> 向下滚动半屏(upwards)</p>
+</blockquote>
+
+<hr />
+
+<h2 id="折叠">折叠</h2>
+
+<blockquote>
+<p><code>3zF</code> 创建折叠操作符，并折叠3行<br />
+<code>zo</code> 打开光标下的折叠(open)<br />
+<code>zc</code> 关闭光标下的折叠(close)<br />
+<code>zR</code> 打开所有的折叠<br />
+<code>zd</code> 删除光标下的折叠操作符(delete)</p>
+</blockquote>
+
+<hr />
+
+<h2 id="自动完成">自动完成</h2>
+
+<blockquote>
+<p><code>&lt;C-n&gt;</code> 自动完成当前的单词<br />
+<code>&lt;C-p&gt;</code> 自动完成当前的单词，光标定位在自动完成列表的最后一行<br />
+<code>&lt;C-x&gt;&lt;C-o&gt;</code> 使用&rdquo;Omnicomplete&rdquo;全能补全函数(:help omnifunc)(同<code>&lt;C-x-o&gt;</code>)</p>
+</blockquote>
+
+<hr />
+
+<h2 id="标记和历史">标记和历史</h2>
+
+<blockquote>
+<p><code>ma</code> 在当前光标位置设置位置标记(可使用范围&rdquo;a-zA-Z&rdquo;)<br />
+`<code>a</code> 跳转到&rdquo;a&rdquo;标记<br />
+<code>g;</code> 转到上一次编辑的地方<br />
+<code>:his</code> 查看执行的命令历史记录(默认参数为&rdquo;c&rdquo;即&rdquo;cmd&rdquo;)<br />
+<code>:his s</code> 查看搜索字符串的历史记录(history search)<br />
+<code>:his a</code> 查看包括搜索/命令等所有历史记录(了解更多参数<code>:help :history</code>)</p>
+</blockquote>
+
+<hr />
+
+<h2 id="键映射">键映射</h2>
+
+<blockquote>
+<p><code>:map</code> 查看已映射的键列表<br />
+<code>:imap</code> 查看插入模式下已映射的键列表<br />
+<code>:nmap</code> 查看普通模式下已映射的键列表<br />
+<code>:imap jj &lt;Esc&gt;</code> 插入模式下键入<code>jj</code>映射到<code>&lt;ESC&gt;</code>(返回普通模式)<br />
+<code>:nmap &lt;C-h&gt; &lt;C-w&gt;h</code> 普通模式下映射<code>&lt;C-h&gt;</code>到<code>&lt;C-w&gt;h</code>(光标移动到左边一个窗口)</p>
+</blockquote>
+
+<hr />
+
+<h2 id="替换">替换</h2>
+
+<blockquote>
+<p><code>:%s/w1/r2/g</code> 将文件中所有的&rdquo;w1&rdquo;替换为&rdquo;r2&rdquo;<br />
+<code>:.,$s/w1/r2/g</code> 将当前行到文件末尾所有的&rdquo;w1&rdquo;替换为&rdquo;r2&rdquo;<br />
+<code>:s/w1/r2/g</code> 将当前行中所有的&rdquo;w1&rdquo;替换为&rdquo;r2&rdquo;(同<code>:g/w1/s//r2/g</code>)<br />
+<code>:3s/w1/r2/g</code> 将第3行到文件末尾所有的&rdquo;w1&rdquo;替换为&rdquo;r2&rdquo;<br />
+<code>:3,9s/w1/r2/</code> 将3-9行第一个&rdquo;w1&rdquo;替换为&rdquo;r2&rdquo;<br />
+<code>:3,9s/^/#/</code> 将3-9行行首添加&rdquo;#&ldquo;号(可用于注释)<br />
+<code>:3,9s/^/\/\//</code> 将3-9行行首添加<code>//</code>双斜线<br />
+<code>:3,+3s/^#//</code> 将第3行及其后3行行首的&rdquo;#&ldquo;号去掉<br />
+<code>:.-3s/^/#/</code> 将当前行上的第三行行首添加&rdquo;#&ldquo;号</p>
+
+<p><code>:g/print/d</code> 删除包含&rdquo;print&rdquo;字符串的所有行<br />
+<code>:g!/print/d</code> 删除不包含&rdquo;print&rdquo;字符串的所有行<br />
+<code>:%s/\s\+$//</code> 去除行尾空白字符(<code>\s</code>表示空白字符<code>空格/TAB</code>，<code>\+</code>表示一个或多个)<br />
+<code>:%s/^\([a-z]\)/\U\1/</code> 首字母大写(<code>\1</code>表示第一个<code>\(</code>和<code>\)</code>之间的匹配文本)<br />
+<code>:g/^$/,/./-j</code> 压缩空行<br />
+<code>:%s/^M$//</code> 去除行尾的<code>^M</code> (<code>^M</code>使用<code>&lt;C-v&gt;&lt;C-m&gt;</code>录入)<br />
+<code>:%s/^I//</code> 删除文件所有行的第一个<code>TAB</code>(<code>^I</code>使用<code>TAB</code>键录入)<br />
+<code>:%s/^\d.//</code> 删除文件所有行行首的数字和&rdquo;.&ldquo;(如：<code>5.</code>)</p>
+</blockquote></div>
+</div>
+        
+        
+    </div>
+    <div id="sidebar" class="right-content sidebar-show">
+        <div>
+            <div id="info-card" class="ui card">
+    <div class="image lg-img" data-src="/img/moon.jpg" data-download-url="false">
+        <img src="/img/moon.jpg" />
+        <div class="ui dimmer">
+            <div class="content">
+                <div style="font-size: 8em" class="center">
+                    <i class="fa fa-eye"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content" style="text-align: center">
+        <div class="header">ChaneyZorn</div>
+        <div class="meta">
+            <i class="marker icon"></i>Wuhan
+            <i></i>
+            <i></i>
+            <i class="divider"> | </i>
+            <i></i>
+            <i class="student icon"></i>HUST
+            <i></i>
+        </div>
+        <div class="description">
+            高山仰止 景行行止 虽不能至 心向往之
+        </div>
+    </div>
+    <div id="social-icons">
+        <a target="_blank" href="https://github.com/Campanula"><i class='fa fa-github' aria-hidden='true'></i></a><a target="_blank" href="https://twitter.com/campanla"><i class='fa fa-twitter' aria-hidden='true'></i></a><a target="_blank" href="http://weibo.com/campanuladream"><i class='fa fa-weibo' aria-hidden='true'></i></a><a target="_blank" href="https://t.me/ChaneyZorn"><i class='fa fa-paper-plane' aria-hidden='true'></i></a><a target="_blank" href="https://www.zhihu.com/people/chaney-zorn"><svg viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='1em' height='1em'><path d='M351.791 562.47h192.946c0-45.368-21.388-71.94-21.388-71.94H355.898c3.977-82.183 7.541-187.659 8.817-226.835h159.282s-0.863-67.402-18.578-67.402H225.44s16.851-88.142 39.319-127.054c0 0-83.605-4.51-112.122 106.962s-71.291 178.876-75.828 191.19c-4.536 12.313 24.628 5.832 36.942 0 12.313-5.833 68.05-25.925 84.253-103.696h86.57c1.166 49.286 4.597 200.335 3.515 226.835H109.861c-25.276 18.147-33.701 71.94-33.701 71.94h203.708c-8.497 56.255-23.417 128.763-44.275 167.21C202.54 790.6 185.04 846.338 65.79 942.256c0 0-19.442 14.258 40.83 9.074 60.274-5.185 117.306-20.74 156.84-99.807 20.554-41.107 41.806-93.251 58.387-146.139l-0.055 0.186 167.856 193.263s22.036-51.848 5.833-108.88L371.046 650.61l-42.125 31.158-0.045 0.151c11.7-41.02 20.112-81.575 22.727-116.859 0.062-0.849 0.126-1.716 0.188-2.592zM584.919 182.034v668.84h70.318l28.807 80.513 121.876-80.513h153.6v-668.84H584.92z m302.231 596.9h-79.837l-99.58 65.783-23.536-65.782h-24.855V256.674h227.807v522.26z'></path></svg></a><a target="_blank" href="https://segmentfault.com/u/chaneyzorn"><svg viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='1em' height='1em'><path d='M169.916413 740.41627c33.172517 30.046317 80.854493 57.014528 126.47246 57.014528 33.172517 0 70.485331-14.514575 70.485331-53.91084 0-43.532469-50.79692-50.78771-107.809401-75.674517-64.269769-27.994588-118.179586-62.193481-118.179586-144.096862 0-106.771769 86.043678-152.378479 192.815447-152.378479 58.052161 0 120.255875 13.483082 164.822906 42.502l0 12.434194-41.464367 81.904405c-29.020964-21.765723-68.420299-36.276205-111.960954-36.276205-38.352493 0-62.193481 15.538905-62.193481 45.604664 0 39.380916 45.616944 47.682999 102.630449 69.449745 78.779228 30.067806 126.461203 63.240323 126.461203 147.198503 0 109.87648-86.034469 157.576875-200.061478 157.576875-72.570829 0-130.62299-19.706831-185.560206-61.164035L126.374734 818.167075 169.916413 740.41627z'></path><path d='M638.40441 890.697995c0-10.514471 2.084475-296.641117 3.128247-395.519102-28.364001 1.043772-57.854663 1.043772-66.23861 1.043772l1.043772-106.241696c8.42488 0 36.83186 0 64.152089 1.043772 0-4.212952-2.084475-91.518367-2.084475-94.668103 0-118.858038 69.409836-163.05361 159.882384-163.05361 38.918381 0 78.877465 6.319939 118.881574 23.151279l0 15.767102-30.53341 84.154655c-16.811898-9.469676-35.749202-14.724353-52.599985-14.724353-29.447682 0-48.38601 14.724353-48.38601 70.473051 0 18.936281 1.083681 74.686003 1.083681 78.899978 31.53625-1.043772 91.518367-1.043772 99.903338-1.043772l-1.043772 106.241696c-8.426927 0-68.367087 0-99.943246-1.043772 2.12643 98.877985 2.12643 385.004631 2.12643 395.519102L638.40441 890.697995z'></path></svg></a><a target="_blank" href="mailto:chaneyzorn@gmail.com"><i class='fa fa-envelope' aria-hidden='true'></i></a>
+    </div>
+</div>
+<div id="tags-clouds" class="ui segments">
+    <div class="ui segment">
+        <h3><i class="tags icon"></i> 标签云</h3>
+    </div>
+    <div class="ui segment underline">
+        <div class="ui horizontal list">
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/af/">af<sup>1</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/fff/">fff<sup>1</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/first/">first<sup>6</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/fre/">fre<sup>1</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/gdsf/">gdsf<sup>1</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/inter/">inter<sup>1</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/mark/">mark<sup>1</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/markdown/">markdown<sup>7</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/test/">test<sup>15</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/test1/">test1<sup>1</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/test2/">test2<sup>1</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/toc/">toc<sup>2</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/try/">try<sup>6</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/vim/">vim<sup>1</sup></a>
+            </div>
+            
+            <div class="item">
+                <i class="tag icon"></i><a href="/tags/wond/">wond<sup>1</sup></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div class="ui segments underline">
+    <div class="ui segment">
+        <h3><i class="users icon"></i> 友链</h3>
+    </div>
+    
+    <div id="friend-link" class="ui segment">
+        <i class="linkify icon"></i><a target="_blank" href="http://farseerfc.me/">Farseerfc的小窩</a>
+    </div>
+    
+    <div id="friend-link" class="ui segment">
+        <i class="linkify icon"></i><a target="_blank" href="http://notes.iissnan.com/">IIssNan&#39;s Notes</a>
+    </div>
+    
+    <div id="friend-link" class="ui segment">
+        <i class="linkify icon"></i><a target="_blank" href="http://litten.me/">Litten的博客</a>
+    </div>
+    
+    <div id="friend-link" class="ui segment">
+        <i class="linkify icon"></i><a target="_blank" href="https://typeblog.net/">Typeblog</a>
+    </div>
+    
+    <div id="friend-link" class="ui segment">
+        <i class="linkify icon"></i><a target="_blank" href="https://blog.yoitsu.moe/">约伊兹的萌狼乡手札</a>
+    </div>
+    
+</div>
+            <footer>
+    <div class="ui divider"></div>
+    <div id="footer-info" class="underline">
+        <div id="footer-copyright" class="ui breadcrumb">
+            <div>
+                <span><i class="copyright icon"></i>2017 <i class="heart icon"></i><a href="/">吾月</a></span>
+                <div class="divider"> | </div>
+                <span>Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a></span>
+            </div>
+            <div>
+                <span><a target="_blank" href="https://git.oschina.net/chaneyzorn/moony.me">Moony</a></span>
+                <div class="divider"> | </div>
+                <span>Designed by <a target="_blank" href="https://github.com/Campanula">ChaneyZorn</a></span>
+            </div>
+            <div>
+                <span><i style="margin-right: 0.25rem;" class="fa fa-cc"></i> <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/"> BY-NC-SA 3.0 CN</a></span>
+            </div>
+        </div>
+    </div>
+</footer>
+        </div>
+    </div>
+</div>
+<div id="TOC-container" class="toc-hide">
+    <div id="TOC">
+        <div id="toc-content" class="right-content">
+            <button id="toc-button" class="ui top attached blue button">文章目录</button>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#帮助">帮助</a></li>
+<li><a href="#撤销-恢复和重复">撤销,恢复和重复</a></li>
+<li><a href="#移动光标-hjkl">移动光标：hjkl</a></li>
+<li><a href="#移动光标-行">移动光标：行</a></li>
+<li><a href="#移动光标-字符">移动光标：字符</a></li>
+<li><a href="#移动光标-单词和文本块">移动光标：单词和文本块</a></li>
+<li><a href="#移动光标-代码块">移动光标：代码块</a></li>
+<li><a href="#搜索">搜索</a></li>
+<li><a href="#插入模式">插入模式</a></li>
+<li><a href="#删除文本">删除文本</a></li>
+<li><a href="#更改文本">更改文本</a></li>
+<li><a href="#缩进文本">缩进文本</a></li>
+<li><a href="#复制和粘贴">复制和粘贴</a></li>
+<li><a href="#文件和目录">文件和目录</a></li>
+<li><a href="#缓冲区">缓冲区</a></li>
+<li><a href="#分割窗口">分割窗口</a></li>
+<li><a href="#标签页">标签页</a></li>
+<li><a href="#滚屏">滚屏</a></li>
+<li><a href="#折叠">折叠</a></li>
+<li><a href="#自动完成">自动完成</a></li>
+<li><a href="#标记和历史">标记和历史</a></li>
+<li><a href="#键映射">键映射</a></li>
+<li><a href="#替换">替换</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+    </div>
+</div>
+
+        <div>
+            <button class="back-top" tabindex="0"><i class="fa fa-arrow-up"></i></button>
+        </div>
+    </main>
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+<script src="//cdn.bootcss.com/velocity/1.4.1/velocity.min.js"></script>
+<script src="//cdn.bootcss.com/semantic-ui/2.2.7/semantic.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.9.0/highlight.min.js"></script>
+<script src="//cdn.jsdelivr.net/g/lightgallery,lg-autoplay,lg-fullscreen,lg-pager,lg-thumbnail,lg-zoom"></script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/js/search.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/load.js"></script>
+</body>
+
+</html>

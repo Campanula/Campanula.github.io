@@ -1,0 +1,2048 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teches on 吾月</title>
+    <link>http://moonye.me/tech/index.xml</link>
+    <description>Recent content in Teches on 吾月</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Feb 2017 19:32:37 +0800</lastBuildDate>
+    <atom:link href="http://moonye.me/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>test</title>
+      <link>http://moonye.me/tech/test/</link>
+      <pubDate>Mon, 20 Feb 2017 19:32:37 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/test/</guid>
+      <description>&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+
+&lt;p&gt;看看没有目录的样子&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VIM速查表</title>
+      <link>http://moonye.me/tech/vim-quick/</link>
+      <pubDate>Sun, 12 Feb 2017 22:59:42 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/vim-quick/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;本文翻译自：&lt;code&gt;http://bencrowder.net/files/vim-fu/&lt;/code&gt;，参考了 &lt;a href=&#34;http://blog.aboutc.net/vim/8/vim-chinese-documentation&#34; target=&#34;_blank&#34;&gt;VIM中文帮助&lt;/a&gt;、 Google翻译结果和实际操作结果，对原文的部分内容重新整理，删除和添加了部分内容并加入了一些技巧。如有翻译不当或在实际操作中出现的任何问题都可以在文章后回复。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;注：&lt;br /&gt;
+1. 文中以&lt;code&gt;:&lt;/code&gt;开头为&lt;strong&gt;命令行模式&lt;/strong&gt;，未注明均为&lt;strong&gt;普通模式&lt;/strong&gt;。(了解vim模式&lt;code&gt;:help vim-modes&lt;/code&gt;)&lt;br /&gt;
+2. &lt;code&gt;&amp;lt;C-r&amp;gt;&lt;/code&gt;意为&lt;code&gt;Ctrl + r&lt;/code&gt;，其他同理。&lt;br /&gt;
+3. 主要关注点：&lt;strong&gt;光标的移动&lt;/strong&gt;，&lt;strong&gt;文本的编辑&lt;/strong&gt;和&lt;strong&gt;多文件的切换&lt;/strong&gt;。&lt;br /&gt;
+4. 有两个不得不提的键:&lt;code&gt;&amp;lt;TAB&amp;gt;&lt;/code&gt;&lt;strong&gt;各种模式的下的补全&lt;/strong&gt;和&lt;code&gt;&amp;lt;ESC&amp;gt;&lt;/code&gt;&lt;strong&gt;各种模式下的切换&lt;/strong&gt;。无论你是使用什么终端，或是使用什么编辑器，这两个键都显得格外重要。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;帮助&#34;&gt;帮助&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;:help&lt;/code&gt; 加载帮助&lt;br /&gt;
+&lt;code&gt;:help j&lt;/code&gt; 获取&amp;rdquo;j&amp;rdquo;命令的相关帮助&lt;br /&gt;
+&lt;code&gt;:help :split&lt;/code&gt; 获取&amp;rdquo;:split&amp;rdquo;命令帮助&lt;br /&gt;
+&lt;code&gt;:help z*&lt;/code&gt; 获取以&amp;rdquo;z&amp;rdquo;开头的相关命令帮助&lt;br /&gt;
+&lt;code&gt;:help function-list&lt;/code&gt; 显示vim提供的函数列表&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;撤销-恢复和重复&#34;&gt;撤销,恢复和重复&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;u&lt;/code&gt; 撤销(undo)&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-r&amp;gt;&lt;/code&gt; 恢复撤销前的状态&lt;br /&gt;
+&lt;code&gt;:redo&lt;/code&gt; 恢复(同&lt;code&gt;&amp;lt;C-r&amp;gt;&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;.&lt;/code&gt; 重复最后一个命令&lt;br /&gt;
+&lt;code&gt;[n][command]&lt;/code&gt; 重复[n]次[command]命令&lt;br /&gt;
+&lt;code&gt;:qa&lt;/code&gt; 退出所有窗口&lt;br /&gt;
+&lt;code&gt;:wqa&lt;/code&gt; 保存退出所有窗口&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;移动光标-hjkl&#34;&gt;移动光标：hjkl&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;     ^
+     k
+&amp;lt; h     l &amp;gt;
+     j
+     v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;移动光标-行&#34;&gt;移动光标：行&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;0&lt;/code&gt; 跳转到当前行首&lt;br /&gt;
+&lt;code&gt;^&lt;/code&gt; 跳转到当前行的第一个非空字符(空格/TAB)&lt;br /&gt;
+&lt;code&gt;$&lt;/code&gt; 跳转到当前行的末尾&lt;br /&gt;
+&lt;code&gt;gg&lt;/code&gt; 跳转到文件第一行(goto)&lt;br /&gt;
+&lt;code&gt;G&lt;/code&gt; 跳转到文件最后一行&lt;br /&gt;
+&lt;code&gt;47G&lt;/code&gt; 跳转到文件第47行&lt;br /&gt;
+&lt;code&gt;:47&lt;/code&gt; 跳转到文件第47行(同&lt;code&gt;47G&lt;/code&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;移动光标-字符&#34;&gt;移动光标：字符&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;f[char]&lt;/code&gt; 跳转到第一个[char]字符(find)&lt;br /&gt;
+&lt;code&gt;3f[char]&lt;/code&gt; 跳转到第三个[char]字符&lt;br /&gt;
+&lt;code&gt;F[char]&lt;/code&gt; 向左跳转到第一个[char]字符&lt;br /&gt;
+&lt;code&gt;t[char]&lt;/code&gt; 跳转到第一个[char]字符的前一个字符(till before - right)&lt;br /&gt;
+&lt;code&gt;T[char]&lt;/code&gt; 向左跳转到第一个[char]字符的后一个字符(till after - left)&lt;br /&gt;
+&lt;code&gt;;&lt;/code&gt; 重复最后一次的 f/F/t/T 移动命令&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;移动光标-单词和文本块&#34;&gt;移动光标：单词和文本块&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;w&lt;/code&gt; 跳转到下一个单词的开头(word)&lt;br /&gt;
+&lt;code&gt;3w&lt;/code&gt; 跳转到第三个单词的开头&lt;br /&gt;
+&lt;code&gt;e&lt;/code&gt; 跳转到下一个单词的结尾(end of word)&lt;br /&gt;
+&lt;code&gt;b&lt;/code&gt; 跳转到上一个单词的开头(backward beginning)&lt;br /&gt;
+&lt;code&gt;(&lt;/code&gt; 跳转到上一个句子的开头&lt;br /&gt;
+&lt;code&gt;)&lt;/code&gt; 跳转到下一个句子的开头&lt;br /&gt;
+&lt;code&gt;{&lt;/code&gt; 跳转到上一个段落的开头&lt;br /&gt;
+&lt;code&gt;}&lt;/code&gt; 跳转到下一个段落的开头&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;移动光标-代码块&#34;&gt;移动光标：代码块&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;%&lt;/code&gt; 在当前大括号/中括号/小括号的开始位置&lt;code&gt;{/[/(&lt;/code&gt;和结束位置&lt;code&gt;}/]/)&lt;/code&gt;之间跳转&lt;br /&gt;
+&lt;code&gt;[[&lt;/code&gt; 跳转到上一个函数的开头(如果光标在函数体内则跳转到当前函数的开头)&lt;br /&gt;
+&lt;code&gt;]]&lt;/code&gt; 跳转到下一个函数的开头&lt;br /&gt;
+&lt;code&gt;[{&lt;/code&gt; 跳转到当前程序块的开头(当前程序块为当前程序的上一层，不是固定的)&lt;br /&gt;
+&lt;code&gt;]}&lt;/code&gt; 跳转到当前程序块的结尾&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;更多移动光标命令请查看&amp;quot;:help cursor-motions&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;搜索&#34;&gt;搜索&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;/[word]&lt;/code&gt; 搜索[word]字符串&lt;br /&gt;
+&lt;code&gt;?[word]&lt;/code&gt; 向上搜索[word]字符串&lt;br /&gt;
+&lt;code&gt;n&lt;/code&gt; 跳转到下一个匹配的字符串(保持最后一个搜索命令的方向)(next match)&lt;br /&gt;
+&lt;code&gt;N&lt;/code&gt; 跳转到上一个匹配的字符串(保持最后一个搜索命令的方向)&lt;br /&gt;
+&lt;code&gt;*&lt;/code&gt; 搜索当前光标下的单词&lt;br /&gt;
+&lt;code&gt;#&lt;/code&gt; 向上搜索当前光标下的单词&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;插入模式&#34;&gt;插入模式&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;i&lt;/code&gt; 在光标位置前进入插入模式&lt;br /&gt;
+&lt;code&gt;I&lt;/code&gt; 在当前行的第一个非空字符进入插入模式&lt;br /&gt;
+&lt;code&gt;o&lt;/code&gt; 在当前行的下一行添加一个空行进入插入模式&lt;br /&gt;
+&lt;code&gt;O&lt;/code&gt; 在当前行的上一行添加一个空行进入插入模式&lt;br /&gt;
+&lt;code&gt;a&lt;/code&gt; 在光标位置后进入插入模式&lt;br /&gt;
+&lt;code&gt;A&lt;/code&gt; 在当前行的末尾进入插入模式&lt;br /&gt;
+&lt;code&gt;s&lt;/code&gt; 删除光标位置下的字符并进入插入模式&lt;br /&gt;
+&lt;code&gt;S&lt;/code&gt; 删除当前行内容并进入插入模式&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;注：插入模式下使用 &lt;code&gt;&amp;lt;C-o&amp;gt;&lt;/code&gt; 可以进入&lt;strong&gt;插入普通模式&lt;/strong&gt;(窗口底部会由&lt;code&gt;-- INSERT --&lt;/code&gt;变为&lt;code&gt;-- (insert) --&lt;/code&gt;)，允许你执行完一个命令后，再返回插入模式。&lt;/p&gt;
+
+&lt;p&gt;如：在&lt;strong&gt;插入模式&lt;/strong&gt;下选择保存在寄存器中的内容进行粘贴时，可以&lt;code&gt;&amp;lt;C-o&amp;gt;&lt;/code&gt;, &lt;code&gt;:reg&lt;/code&gt;, &lt;code&gt;&amp;lt;C-r&amp;gt;3&lt;/code&gt;，其中：&lt;code&gt;:reg&lt;/code&gt;是查看寄存器列表，&lt;code&gt;&amp;lt;C-r&amp;gt;3&lt;/code&gt;是把寄存器列表中编号为&lt;code&gt;3&lt;/code&gt;的内容粘贴在此处。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;删除文本&#34;&gt;删除文本&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;x&lt;/code&gt; 删除光标位置下的字符&lt;br /&gt;
+&lt;code&gt;dw&lt;/code&gt; 删除光标之后的单词剩余部分(delete word)&lt;br /&gt;
+&lt;code&gt;diw&lt;/code&gt; 删除一个单词&lt;br /&gt;
+&lt;code&gt;dd&lt;/code&gt; 删除当前行&lt;br /&gt;
+&lt;code&gt;D&lt;/code&gt; 删除从光标位置到当前行的末尾(同&lt;code&gt;d$&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;df[char]&lt;/code&gt; 删除从光标位置到[char]字符(delete find [char])&lt;br /&gt;
+&lt;code&gt;d)&lt;/code&gt; 删除从光标位置到下一个句子的开始&lt;br /&gt;
+&lt;code&gt;d}&lt;/code&gt; 删除从光标位置到该段落的末尾&lt;br /&gt;
+&lt;code&gt;di{&lt;/code&gt; 删除花括号之间的内容(delete inner {})(同&lt;code&gt;diB&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;di(&lt;/code&gt; 删除小括号之间的内容(delete inner ())(同&lt;code&gt;dib&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;dit&lt;/code&gt; 删除闭合标签之间的内容(html/xml等标签，delete inner tag)&lt;br /&gt;
+&lt;code&gt;dat&lt;/code&gt; 删除左右尖括号及之间的内容(delete a tag)&lt;br /&gt;
+&lt;code&gt;da&amp;lt;&lt;/code&gt; 删除左右尖括号及之间的内容(delete a &amp;lt;&amp;gt;)&lt;br /&gt;
+&lt;code&gt;di&amp;quot;&lt;/code&gt; 删除引号之间的内容(delete inner &amp;ldquo;&amp;rdquo;)&lt;br /&gt;
+&lt;code&gt;da&amp;quot;&lt;/code&gt; 删除左右引号及之间的内容(delete a &amp;ldquo;&amp;rdquo;)&lt;br /&gt;
+&lt;code&gt;:5,10d&lt;/code&gt; 删除5-10行&lt;br /&gt;
+&lt;code&gt;3dd&lt;/code&gt; 删除从当前行开始的3行&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-w&amp;gt;&lt;/code&gt; 删除光标前的一个单词(插入模式)&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-u&amp;gt;&lt;/code&gt; 从光标位置删除到行首(插入模式)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;这里加 shift 大写，意为行尾&lt;br /&gt;
+注：&lt;code&gt;d&lt;/code&gt;/&lt;code&gt;c&lt;/code&gt;开头的命令会将删除的文本放到寄存器(通过&lt;code&gt;:reg&lt;/code&gt;查看)，可以理解为剪切。&lt;br /&gt;
+关于&amp;rdquo;a&amp;rdquo;n和&amp;rdquo;i&amp;rdquo;nner可以参考&lt;code&gt;:help object-select&lt;/code&gt;&lt;strong&gt;文本对象选择&lt;/strong&gt;部分&lt;br /&gt;
+另：一般向右的操作包含光标下的字符，向左的操作不包含光标下的字符&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;更改文本&#34;&gt;更改文本&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;J&lt;/code&gt; 将下一行合并的当前行的末尾(Join line)&lt;br /&gt;
+&lt;code&gt;3,9j&lt;/code&gt; 合并3-9行&lt;br /&gt;
+&lt;code&gt;~&lt;/code&gt; 切换光标下字符的大小写&lt;br /&gt;
+&lt;code&gt;u&lt;/code&gt; 更改选定的文本为小写(可视模式)&lt;br /&gt;
+&lt;code&gt;U&lt;/code&gt; 更改选定的文本为大写(可视模式)&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-a&amp;gt;&lt;/code&gt; 把当前光标下或之后的数值加1&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-x&amp;gt;&lt;/code&gt; 把当前光标下或之后的数值减1&lt;br /&gt;
+&lt;code&gt;r[char]&lt;/code&gt; 替换光标下的字符为[char]. (replace)&lt;br /&gt;
+&lt;code&gt;R&lt;/code&gt; 进入替换模式&lt;br /&gt;
+&lt;code&gt;cw&lt;/code&gt; 删除光标之后的单词剩余部分并进入插入模式(change word)&lt;br /&gt;
+&lt;code&gt;cc&lt;/code&gt; 删除当前行内容并进入插入模式(同&lt;code&gt;S&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;C&lt;/code&gt; 删除从光标位置到当前行的末尾并进入插入模式(同&lt;code&gt;c$&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;cf[char]&lt;/code&gt; 删除从光标位置到[char]字符并进入插入模式&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;这里&lt;code&gt;c&lt;/code&gt;开头加 shift 大写，意为行尾&lt;br /&gt;
+&lt;code&gt;c&lt;/code&gt;开头&amp;rdquo;change&amp;rdquo;更改(删除并插入)，&lt;code&gt;d&lt;/code&gt;开头&amp;rdquo;delete&amp;rdquo;删除，和&lt;code&gt;y&lt;/code&gt;开头&amp;rdquo;yank/copy&amp;rdquo;，格式相同，可相互参考使用&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;缩进文本&#34;&gt;缩进文本&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt; 缩进当前行&lt;br /&gt;
+&lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt; 向左缩进当前行&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-d&amp;gt;&lt;/code&gt; 缩进当前行(插入模式)&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-t&amp;gt;&lt;/code&gt; 向左缩进当前行(插入模式)&lt;br /&gt;
+&lt;code&gt;:3,9&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt; 将3-9行缩进5个TAB&lt;br /&gt;
+&lt;code&gt;&amp;gt;&lt;/code&gt; 缩进选定的行(可视模式)&lt;br /&gt;
+&lt;code&gt;&amp;lt;&lt;/code&gt; 向左缩进选定的行(可视模式)&lt;br /&gt;
+&lt;code&gt;&amp;gt;i{&lt;/code&gt; 缩进花括号之间的内容(indent inner {})(同&lt;code&gt;&amp;gt;iB&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;&amp;gt;a{&lt;/code&gt; 缩进花括号及之间的内容(indent a {})(同&lt;code&gt;&amp;gt;aB&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;=}&lt;/code&gt; 缩进当前段落&lt;br /&gt;
+&lt;code&gt;gg=G&lt;/code&gt; 全文缩进/格式化&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;复制和粘贴&#34;&gt;复制和粘贴&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;v&lt;/code&gt; 进入可视模式，以字符为单位选择&lt;br /&gt;
+&lt;code&gt;V&lt;/code&gt; 进入可视模式，以行为单位选择&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-v&amp;gt;&lt;/code&gt; 进入列块可视模式(如果映射&lt;code&gt;&amp;lt;C-v&amp;gt;&lt;/code&gt;为&amp;rdquo;粘贴&amp;rdquo;时请注意)&lt;br /&gt;
+&lt;code&gt;gv&lt;/code&gt; 重新选择最后选定的区域&lt;br /&gt;
+&lt;code&gt;y&lt;/code&gt; 抽出选择的文本到寄存器(可视模式)(yank/copy)&lt;br /&gt;
+&lt;code&gt;&amp;quot;+y&lt;/code&gt; 抽出选择的文本到系统剪切板(可视模式)(好像不太好使)&lt;br /&gt;
+&lt;code&gt;:co 10&lt;/code&gt; 复制当前行到第11行(copy)&lt;br /&gt;
+&lt;code&gt;:co&lt;/code&gt; . 复制当前行到下一行(同&lt;code&gt;yyp&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;:5,10co 20&lt;/code&gt; 复制5-10行到第21行&lt;br /&gt;
+&lt;code&gt;yy&lt;/code&gt; 复制当前行&lt;br /&gt;
+&lt;code&gt;y$&lt;/code&gt; 复制到行尾&lt;br /&gt;
+&lt;code&gt;yw&lt;/code&gt; 复制光标之后的单词剩余部分(yank word)&lt;br /&gt;
+&lt;code&gt;yb&lt;/code&gt; 复制光标之前的单词剩余部分&lt;br /&gt;
+&lt;code&gt;yiw&lt;/code&gt; 复制一个单词&lt;br /&gt;
+&lt;code&gt;yip&lt;/code&gt; 复制当前段落(yank inner paragraph)&lt;br /&gt;
+&lt;code&gt;yas&lt;/code&gt; 复制一个句子(yank a sentence)&lt;br /&gt;
+&lt;code&gt;yi&amp;lt;&lt;/code&gt; 复制尖括号之间的内容(Yank inner &amp;lt;&amp;gt;)&lt;br /&gt;
+&lt;code&gt;11y&lt;/code&gt; 复制11行&lt;br /&gt;
+&lt;code&gt;p&lt;/code&gt; 粘贴(paste)&lt;br /&gt;
+&lt;code&gt;P&lt;/code&gt; 粘贴到光标前&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-r&amp;gt;&amp;quot;&lt;/code&gt; 粘贴(插入模式)&lt;br /&gt;
+&lt;code&gt;&amp;quot;ayy&lt;/code&gt; 复制当前行到寄存器&amp;rdquo;a&amp;rdquo;(可使用范围&amp;rdquo;a-z&amp;rdquo;)&lt;br /&gt;
+&lt;code&gt;&amp;quot;ap&lt;/code&gt; 粘贴从寄存器&amp;rdquo;a&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;文件和目录&#34;&gt;文件和目录&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;:e!&lt;/code&gt; 重新载入当前文件，放弃任何更改(edit)&lt;br /&gt;
+&lt;code&gt;:e [file]&lt;/code&gt; 编辑文件[file]&lt;br /&gt;
+&lt;code&gt;:r [file]&lt;/code&gt; 将[file]文件内容插入到下一行(read)&lt;br /&gt;
+&lt;code&gt;:r !date&lt;/code&gt; 将&amp;rdquo;date&amp;rdquo;命令返回的结果插入到下一行&lt;br /&gt;
+&lt;code&gt;:pwd&lt;/code&gt; 输出当前工作目录到状态栏&lt;br /&gt;
+&lt;code&gt;:cd [dir]&lt;/code&gt; 切换当前工作目录到[dir]&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-g&amp;gt;&lt;/code&gt; 显示当前文件信息(文件名及行数等)&lt;br /&gt;
+&lt;code&gt;gf&lt;/code&gt; 打开光标下的文件路径(相当于以&lt;code&gt;:e&lt;/code&gt;的方式打开)&lt;br /&gt;
+&lt;code&gt;ga&lt;/code&gt; 显示光标下的字符在当前使用的 encoding 下的内码&lt;br /&gt;
+&lt;code&gt;:saveas [file]&lt;/code&gt; 另存为[file]文件(文件不存在，使用&lt;code&gt;:saveas!&lt;/code&gt;覆盖已存在文件)&lt;br /&gt;
+&lt;code&gt;:w &amp;gt; [file]&lt;/code&gt; 将当前文件内容写入[file]文件(文件不存在，同&lt;code&gt;:saveas&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;:3,9w &amp;gt;&amp;gt; [file]&lt;/code&gt; 将3-9行的内容追加到[file]文件(文件已存在)&lt;br /&gt;
+&lt;code&gt;:w&lt;/code&gt; 保存当前文件&lt;br /&gt;
+&lt;code&gt;:x&lt;/code&gt; 保存并退出&lt;br /&gt;
+&lt;code&gt;:q!&lt;/code&gt; 不保存退出&lt;br /&gt;
+&lt;code&gt;:qa!&lt;/code&gt; 强行退出所有文件，不保存&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;:sh&lt;/code&gt;  切换到shell终端，使用&lt;code&gt;&amp;lt;C-d&amp;gt;&lt;/code&gt;返回&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-z&amp;gt;&lt;/code&gt; 同上，使用&lt;code&gt;fg&lt;/code&gt;返回(属终端快捷键范畴)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;缓冲区&#34;&gt;缓冲区&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;:ls&lt;/code&gt; 查看缓冲区列表(同 &lt;code&gt;:files&lt;/code&gt;, 或 &lt;code&gt;:buffers&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;:bn&lt;/code&gt; 编辑下一个缓冲区(buffer next)&lt;br /&gt;
+&lt;code&gt;:bp&lt;/code&gt; 编辑上一个缓冲区(buffer previous)&lt;br /&gt;
+&lt;code&gt;:b[n]&lt;/code&gt; 编辑缓冲区列表中第[n]个缓冲区&lt;br /&gt;
+&lt;code&gt;:b &amp;lt;Tab&amp;gt;&lt;/code&gt; 选择要切换的 buffer 文件&lt;br /&gt;
+&lt;code&gt;:bd&lt;/code&gt; 卸载当前缓冲区(buffer delete)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;分割窗口&#34;&gt;分割窗口&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;:sp&lt;/code&gt; 水平分割当前窗口(split)&lt;br /&gt;
+&lt;code&gt;:vs&lt;/code&gt; 垂直分割当前窗口(vertical split)&lt;br /&gt;
+&lt;code&gt;:sp [file]&lt;/code&gt; 水平分割一个新窗口，并编辑文件[file]&lt;br /&gt;
+&lt;code&gt;:close&lt;/code&gt; 关闭当前窗口(同&lt;code&gt;:q&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;:only&lt;/code&gt; 关闭其他窗口&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-w&amp;gt; h&lt;/code&gt; 光标移动到左边一个窗口&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-w&amp;gt; j&lt;/code&gt; 光标移动到下边一个窗口&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-w&amp;gt; k&lt;/code&gt; 光标移动到上边一个窗口&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-w&amp;gt; l&lt;/code&gt; 光标移动到右边一个窗口&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-w&amp;gt; w&lt;/code&gt; 光标移动到下一个窗口&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;标签页&#34;&gt;标签页&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;:tabs&lt;/code&gt; 查看标签页列表&lt;br /&gt;
+&lt;code&gt;:tabe&lt;/code&gt; 打开一个新标签页(tab edit)(同&lt;code&gt;:tabnew&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;:tabe&lt;/code&gt; [file] 打开一个新标签页，并编辑文件[file].&lt;br /&gt;
+&lt;code&gt;:tabc&lt;/code&gt; 关闭当前标签页(tab close)(同&lt;code&gt;:q&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;gt&lt;/code&gt; 转到下一个标签页(go to)(同&lt;code&gt;:tabn&lt;/code&gt;/&lt;code&gt;:tabnext&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;gT&lt;/code&gt; 转到上一个标签页(同&lt;code&gt;:tabp&lt;/code&gt;/&lt;code&gt;:tabprevious&lt;/code&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;滚屏&#34;&gt;滚屏&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;H&lt;/code&gt; 跳转到屏幕的顶部(home)&lt;br /&gt;
+&lt;code&gt;M&lt;/code&gt; 跳转到屏幕的中间(middle)&lt;br /&gt;
+&lt;code&gt;L&lt;/code&gt; 跳转到屏幕的底部(low)&lt;br /&gt;
+&lt;code&gt;zt&lt;/code&gt; 将当前行滚动至屏幕顶部(top)&lt;br /&gt;
+&lt;code&gt;zz&lt;/code&gt; 将当前行滚动至屏幕中间(同&lt;code&gt;z.&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;zb&lt;/code&gt; 将当前行滚动至屏幕中间(bottom)(同&lt;code&gt;z-&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-f&amp;gt;&lt;/code&gt; 滚动至下一页(forwards)&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-b&amp;gt;&lt;/code&gt; 滚动至上一页(backwards)&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-d&amp;gt;&lt;/code&gt; 向下滚动半屏(downwards)&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-u&amp;gt;&lt;/code&gt; 向下滚动半屏(upwards)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;折叠&#34;&gt;折叠&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;3zF&lt;/code&gt; 创建折叠操作符，并折叠3行&lt;br /&gt;
+&lt;code&gt;zo&lt;/code&gt; 打开光标下的折叠(open)&lt;br /&gt;
+&lt;code&gt;zc&lt;/code&gt; 关闭光标下的折叠(close)&lt;br /&gt;
+&lt;code&gt;zR&lt;/code&gt; 打开所有的折叠&lt;br /&gt;
+&lt;code&gt;zd&lt;/code&gt; 删除光标下的折叠操作符(delete)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;自动完成&#34;&gt;自动完成&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;C-n&amp;gt;&lt;/code&gt; 自动完成当前的单词&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-p&amp;gt;&lt;/code&gt; 自动完成当前的单词，光标定位在自动完成列表的最后一行&lt;br /&gt;
+&lt;code&gt;&amp;lt;C-x&amp;gt;&amp;lt;C-o&amp;gt;&lt;/code&gt; 使用&amp;rdquo;Omnicomplete&amp;rdquo;全能补全函数(:help omnifunc)(同&lt;code&gt;&amp;lt;C-x-o&amp;gt;&lt;/code&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;标记和历史&#34;&gt;标记和历史&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;ma&lt;/code&gt; 在当前光标位置设置位置标记(可使用范围&amp;rdquo;a-zA-Z&amp;rdquo;)&lt;br /&gt;
+`&lt;code&gt;a&lt;/code&gt; 跳转到&amp;rdquo;a&amp;rdquo;标记&lt;br /&gt;
+&lt;code&gt;g;&lt;/code&gt; 转到上一次编辑的地方&lt;br /&gt;
+&lt;code&gt;:his&lt;/code&gt; 查看执行的命令历史记录(默认参数为&amp;rdquo;c&amp;rdquo;即&amp;rdquo;cmd&amp;rdquo;)&lt;br /&gt;
+&lt;code&gt;:his s&lt;/code&gt; 查看搜索字符串的历史记录(history search)&lt;br /&gt;
+&lt;code&gt;:his a&lt;/code&gt; 查看包括搜索/命令等所有历史记录(了解更多参数&lt;code&gt;:help :history&lt;/code&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;键映射&#34;&gt;键映射&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;:map&lt;/code&gt; 查看已映射的键列表&lt;br /&gt;
+&lt;code&gt;:imap&lt;/code&gt; 查看插入模式下已映射的键列表&lt;br /&gt;
+&lt;code&gt;:nmap&lt;/code&gt; 查看普通模式下已映射的键列表&lt;br /&gt;
+&lt;code&gt;:imap jj &amp;lt;Esc&amp;gt;&lt;/code&gt; 插入模式下键入&lt;code&gt;jj&lt;/code&gt;映射到&lt;code&gt;&amp;lt;ESC&amp;gt;&lt;/code&gt;(返回普通模式)&lt;br /&gt;
+&lt;code&gt;:nmap &amp;lt;C-h&amp;gt; &amp;lt;C-w&amp;gt;h&lt;/code&gt; 普通模式下映射&lt;code&gt;&amp;lt;C-h&amp;gt;&lt;/code&gt;到&lt;code&gt;&amp;lt;C-w&amp;gt;h&lt;/code&gt;(光标移动到左边一个窗口)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;替换&#34;&gt;替换&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;:%s/w1/r2/g&lt;/code&gt; 将文件中所有的&amp;rdquo;w1&amp;rdquo;替换为&amp;rdquo;r2&amp;rdquo;&lt;br /&gt;
+&lt;code&gt;:.,$s/w1/r2/g&lt;/code&gt; 将当前行到文件末尾所有的&amp;rdquo;w1&amp;rdquo;替换为&amp;rdquo;r2&amp;rdquo;&lt;br /&gt;
+&lt;code&gt;:s/w1/r2/g&lt;/code&gt; 将当前行中所有的&amp;rdquo;w1&amp;rdquo;替换为&amp;rdquo;r2&amp;rdquo;(同&lt;code&gt;:g/w1/s//r2/g&lt;/code&gt;)&lt;br /&gt;
+&lt;code&gt;:3s/w1/r2/g&lt;/code&gt; 将第3行到文件末尾所有的&amp;rdquo;w1&amp;rdquo;替换为&amp;rdquo;r2&amp;rdquo;&lt;br /&gt;
+&lt;code&gt;:3,9s/w1/r2/&lt;/code&gt; 将3-9行第一个&amp;rdquo;w1&amp;rdquo;替换为&amp;rdquo;r2&amp;rdquo;&lt;br /&gt;
+&lt;code&gt;:3,9s/^/#/&lt;/code&gt; 将3-9行行首添加&amp;rdquo;#&amp;ldquo;号(可用于注释)&lt;br /&gt;
+&lt;code&gt;:3,9s/^/\/\//&lt;/code&gt; 将3-9行行首添加&lt;code&gt;//&lt;/code&gt;双斜线&lt;br /&gt;
+&lt;code&gt;:3,+3s/^#//&lt;/code&gt; 将第3行及其后3行行首的&amp;rdquo;#&amp;ldquo;号去掉&lt;br /&gt;
+&lt;code&gt;:.-3s/^/#/&lt;/code&gt; 将当前行上的第三行行首添加&amp;rdquo;#&amp;ldquo;号&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;:g/print/d&lt;/code&gt; 删除包含&amp;rdquo;print&amp;rdquo;字符串的所有行&lt;br /&gt;
+&lt;code&gt;:g!/print/d&lt;/code&gt; 删除不包含&amp;rdquo;print&amp;rdquo;字符串的所有行&lt;br /&gt;
+&lt;code&gt;:%s/\s\+$//&lt;/code&gt; 去除行尾空白字符(&lt;code&gt;\s&lt;/code&gt;表示空白字符&lt;code&gt;空格/TAB&lt;/code&gt;，&lt;code&gt;\+&lt;/code&gt;表示一个或多个)&lt;br /&gt;
+&lt;code&gt;:%s/^\([a-z]\)/\U\1/&lt;/code&gt; 首字母大写(&lt;code&gt;\1&lt;/code&gt;表示第一个&lt;code&gt;\(&lt;/code&gt;和&lt;code&gt;\)&lt;/code&gt;之间的匹配文本)&lt;br /&gt;
+&lt;code&gt;:g/^$/,/./-j&lt;/code&gt; 压缩空行&lt;br /&gt;
+&lt;code&gt;:%s/^M$//&lt;/code&gt; 去除行尾的&lt;code&gt;^M&lt;/code&gt; (&lt;code&gt;^M&lt;/code&gt;使用&lt;code&gt;&amp;lt;C-v&amp;gt;&amp;lt;C-m&amp;gt;&lt;/code&gt;录入)&lt;br /&gt;
+&lt;code&gt;:%s/^I//&lt;/code&gt; 删除文件所有行的第一个&lt;code&gt;TAB&lt;/code&gt;(&lt;code&gt;^I&lt;/code&gt;使用&lt;code&gt;TAB&lt;/code&gt;键录入)&lt;br /&gt;
+&lt;code&gt;:%s/^\d.//&lt;/code&gt; 删除文件所有行行首的数字和&amp;rdquo;.&amp;ldquo;(如：&lt;code&gt;5.&lt;/code&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Have a try first</title>
+      <link>http://moonye.me/tech/take-a-try-first.1/</link>
+      <pubDate>Sat, 31 Dec 2016 22:29:56 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/take-a-try-first.1/</guid>
+      <description>
+
+&lt;h1 id=&#34;内容模版的语法&#34;&gt;内容模版的语法&lt;/h1&gt;
+
+&lt;h1 id=&#34;配置项&#34;&gt;配置项&lt;/h1&gt;
+
+&lt;h1 id=&#34;markdown练习&#34;&gt;markdown练习&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;试一试。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 试一试。(前面五个空格，有回车，其实只是引用和缩进的简单组合)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;试一试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;/&lt;br /&gt;
+&amp;gt; 引用注释&lt;br /&gt;
+      前面五个空格（无回车）&lt;br /&gt;
+回车实验&lt;br /&gt;
+&amp;gt; xxx&lt;br /&gt;
+&amp;gt;&lt;br /&gt;
+&amp;gt; 隔行实验&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;斜粗体实验&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;斜粗体实验&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体实验&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;长长长长长的删除线&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listplus&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listreduce&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;+ 子子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子子列表&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;br /&gt;
+3.无空格实验（标号后面无空格为普通文本）&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;行号为4，再次有空格&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接有空格&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&#34;http://google.com/&#34; title=&#34;Google&#34; target=&#34;_blank&#34;&gt;Google&lt;/a&gt; than from &lt;a href=&#34;http://search.yahoo.com/&#34; title=&#34;Yahoo Search&#34; target=&#34;_blank&#34;&gt;Yahoo&lt;/a&gt; or &lt;a href=&#34;http://search.msn.com/&#34; title=&#34;MSN Search&#34; target=&#34;_blank&#34;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Have a try first</title>
+      <link>http://moonye.me/tech/take-a-try-first.12/</link>
+      <pubDate>Sat, 31 Dec 2016 22:29:56 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/take-a-try-first.12/</guid>
+      <description>
+
+&lt;h1 id=&#34;内容模版的语法&#34;&gt;内容模版的语法&lt;/h1&gt;
+
+&lt;h1 id=&#34;配置项&#34;&gt;配置项&lt;/h1&gt;
+
+&lt;h1 id=&#34;markdown练习&#34;&gt;markdown练习&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;试一试。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 试一试。(前面五个空格，有回车，其实只是引用和缩进的简单组合)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;试一试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;/&lt;br /&gt;
+&amp;gt; 引用注释&lt;br /&gt;
+      前面五个空格（无回车）&lt;br /&gt;
+回车实验&lt;br /&gt;
+&amp;gt; xxx&lt;br /&gt;
+&amp;gt;&lt;br /&gt;
+&amp;gt; 隔行实验&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;斜粗体实验&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;斜粗体实验&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体实验&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;长长长长长的删除线&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listplus&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listreduce&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;+ 子子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子子列表&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;br /&gt;
+3.无空格实验（标号后面无空格为普通文本）&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;行号为4，再次有空格&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接有空格&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&#34;http://google.com/&#34; title=&#34;Google&#34; target=&#34;_blank&#34;&gt;Google&lt;/a&gt; than from &lt;a href=&#34;http://search.yahoo.com/&#34; title=&#34;Yahoo Search&#34; target=&#34;_blank&#34;&gt;Yahoo&lt;/a&gt; or &lt;a href=&#34;http://search.msn.com/&#34; title=&#34;MSN Search&#34; target=&#34;_blank&#34;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Have a try first</title>
+      <link>http://moonye.me/tech/take-a-try-first.2/</link>
+      <pubDate>Sat, 31 Dec 2016 22:29:56 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/take-a-try-first.2/</guid>
+      <description>
+
+&lt;h1 id=&#34;内容模版的语法&#34;&gt;内容模版的语法&lt;/h1&gt;
+
+&lt;h1 id=&#34;配置项&#34;&gt;配置项&lt;/h1&gt;
+
+&lt;h1 id=&#34;markdown练习&#34;&gt;markdown练习&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;试一试。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 试一试。(前面五个空格，有回车，其实只是引用和缩进的简单组合)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;试一试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;/&lt;br /&gt;
+&amp;gt; 引用注释&lt;br /&gt;
+      前面五个空格（无回车）&lt;br /&gt;
+回车实验&lt;br /&gt;
+&amp;gt; xxx&lt;br /&gt;
+&amp;gt;&lt;br /&gt;
+&amp;gt; 隔行实验&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;斜粗体实验&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;斜粗体实验&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体实验&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;长长长长长的删除线&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listplus&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listreduce&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;+ 子子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子子列表&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;br /&gt;
+3.无空格实验（标号后面无空格为普通文本）&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;行号为4，再次有空格&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接有空格&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&#34;http://google.com/&#34; title=&#34;Google&#34; target=&#34;_blank&#34;&gt;Google&lt;/a&gt; than from &lt;a href=&#34;http://search.yahoo.com/&#34; title=&#34;Yahoo Search&#34; target=&#34;_blank&#34;&gt;Yahoo&lt;/a&gt; or &lt;a href=&#34;http://search.msn.com/&#34; title=&#34;MSN Search&#34; target=&#34;_blank&#34;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Have a try first</title>
+      <link>http://moonye.me/tech/take-a-try-first.20/</link>
+      <pubDate>Sat, 31 Dec 2016 22:29:56 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/take-a-try-first.20/</guid>
+      <description>
+
+&lt;h1 id=&#34;内容模版的语法&#34;&gt;内容模版的语法&lt;/h1&gt;
+
+&lt;h1 id=&#34;配置项&#34;&gt;配置项&lt;/h1&gt;
+
+&lt;h1 id=&#34;markdown练习&#34;&gt;markdown练习&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;试一试。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 试一试。(前面五个空格，有回车，其实只是引用和缩进的简单组合)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;试一试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;/&lt;br /&gt;
+&amp;gt; 引用注释&lt;br /&gt;
+      前面五个空格（无回车）&lt;br /&gt;
+回车实验&lt;br /&gt;
+&amp;gt; xxx&lt;br /&gt;
+&amp;gt;&lt;br /&gt;
+&amp;gt; 隔行实验&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;斜粗体实验&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;斜粗体实验&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体实验&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;长长长长长的删除线&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listplus&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listreduce&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;+ 子子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子子列表&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;br /&gt;
+3.无空格实验（标号后面无空格为普通文本）&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;行号为4，再次有空格&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接有空格&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&#34;http://google.com/&#34; title=&#34;Google&#34; target=&#34;_blank&#34;&gt;Google&lt;/a&gt; than from &lt;a href=&#34;http://search.yahoo.com/&#34; title=&#34;Yahoo Search&#34; target=&#34;_blank&#34;&gt;Yahoo&lt;/a&gt; or &lt;a href=&#34;http://search.msn.com/&#34; title=&#34;MSN Search&#34; target=&#34;_blank&#34;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Have a try first</title>
+      <link>http://moonye.me/tech/take-a-try-first.22/</link>
+      <pubDate>Sat, 31 Dec 2016 22:29:56 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/take-a-try-first.22/</guid>
+      <description>
+
+&lt;h1 id=&#34;内容模版的语法&#34;&gt;内容模版的语法&lt;/h1&gt;
+
+&lt;h1 id=&#34;配置项&#34;&gt;配置项&lt;/h1&gt;
+
+&lt;h1 id=&#34;markdown练习&#34;&gt;markdown练习&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;试一试。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 试一试。(前面五个空格，有回车，其实只是引用和缩进的简单组合)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;试一试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;/&lt;br /&gt;
+&amp;gt; 引用注释&lt;br /&gt;
+      前面五个空格（无回车）&lt;br /&gt;
+回车实验&lt;br /&gt;
+&amp;gt; xxx&lt;br /&gt;
+&amp;gt;&lt;br /&gt;
+&amp;gt; 隔行实验&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;斜粗体实验&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;斜粗体实验&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体实验&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;长长长长长的删除线&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listplus&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listreduce&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;+ 子子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子子列表&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;br /&gt;
+3.无空格实验（标号后面无空格为普通文本）&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;行号为4，再次有空格&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接有空格&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&#34;http://google.com/&#34; title=&#34;Google&#34; target=&#34;_blank&#34;&gt;Google&lt;/a&gt; than from &lt;a href=&#34;http://search.yahoo.com/&#34; title=&#34;Yahoo Search&#34; target=&#34;_blank&#34;&gt;Yahoo&lt;/a&gt; or &lt;a href=&#34;http://search.msn.com/&#34; title=&#34;MSN Search&#34; target=&#34;_blank&#34;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Have a try first</title>
+      <link>http://moonye.me/tech/take-a-try-first.23/</link>
+      <pubDate>Sat, 31 Dec 2016 22:29:56 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/take-a-try-first.23/</guid>
+      <description>
+
+&lt;h1 id=&#34;内容模版的语法&#34;&gt;内容模版的语法&lt;/h1&gt;
+
+&lt;h1 id=&#34;配置项&#34;&gt;配置项&lt;/h1&gt;
+
+&lt;h1 id=&#34;markdown练习&#34;&gt;markdown练习&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;试一试。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 试一试。(前面五个空格，有回车，其实只是引用和缩进的简单组合)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;试一试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;/&lt;br /&gt;
+&amp;gt; 引用注释&lt;br /&gt;
+      前面五个空格（无回车）&lt;br /&gt;
+回车实验&lt;br /&gt;
+&amp;gt; xxx&lt;br /&gt;
+&amp;gt;&lt;br /&gt;
+&amp;gt; 隔行实验&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;斜粗体实验&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;斜粗体实验&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体实验&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;长长长长长的删除线&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listplus&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listreduce&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;+ 子子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子子列表&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;br /&gt;
+3.无空格实验（标号后面无空格为普通文本）&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;行号为4，再次有空格&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接有空格&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&#34;http://google.com/&#34; title=&#34;Google&#34; target=&#34;_blank&#34;&gt;Google&lt;/a&gt; than from &lt;a href=&#34;http://search.yahoo.com/&#34; title=&#34;Yahoo Search&#34; target=&#34;_blank&#34;&gt;Yahoo&lt;/a&gt; or &lt;a href=&#34;http://search.msn.com/&#34; title=&#34;MSN Search&#34; target=&#34;_blank&#34;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Have a try first</title>
+      <link>http://moonye.me/tech/take-a-try-first.24/</link>
+      <pubDate>Sat, 31 Dec 2016 22:29:56 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/take-a-try-first.24/</guid>
+      <description>
+
+&lt;h1 id=&#34;内容模版的语法&#34;&gt;内容模版的语法&lt;/h1&gt;
+
+&lt;h1 id=&#34;配置项&#34;&gt;配置项&lt;/h1&gt;
+
+&lt;h1 id=&#34;markdown练习&#34;&gt;markdown练习&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;试一试。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 试一试。(前面五个空格，有回车，其实只是引用和缩进的简单组合)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;试一试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;/&lt;br /&gt;
+&amp;gt; 引用注释&lt;br /&gt;
+      前面五个空格（无回车）&lt;br /&gt;
+回车实验&lt;br /&gt;
+&amp;gt; xxx&lt;br /&gt;
+&amp;gt;&lt;br /&gt;
+&amp;gt; 隔行实验&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;斜粗体实验&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;斜粗体实验&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体实验&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;长长长长长的删除线&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listplus&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listreduce&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;+ 子子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子子列表&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;br /&gt;
+3.无空格实验（标号后面无空格为普通文本）&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;行号为4，再次有空格&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接有空格&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&#34;http://google.com/&#34; title=&#34;Google&#34; target=&#34;_blank&#34;&gt;Google&lt;/a&gt; than from &lt;a href=&#34;http://search.yahoo.com/&#34; title=&#34;Yahoo Search&#34; target=&#34;_blank&#34;&gt;Yahoo&lt;/a&gt; or &lt;a href=&#34;http://search.msn.com/&#34; title=&#34;MSN Search&#34; target=&#34;_blank&#34;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Have a try first</title>
+      <link>http://moonye.me/tech/take-a-try-first.25/</link>
+      <pubDate>Sat, 31 Dec 2016 22:29:56 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/take-a-try-first.25/</guid>
+      <description>
+
+&lt;h1 id=&#34;内容模版的语法&#34;&gt;内容模版的语法&lt;/h1&gt;
+
+&lt;h1 id=&#34;配置项&#34;&gt;配置项&lt;/h1&gt;
+
+&lt;h1 id=&#34;markdown练习&#34;&gt;markdown练习&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;试一试。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 试一试。(前面五个空格，有回车，其实只是引用和缩进的简单组合)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;试一试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;/&lt;br /&gt;
+&amp;gt; 引用注释&lt;br /&gt;
+      前面五个空格（无回车）&lt;br /&gt;
+回车实验&lt;br /&gt;
+&amp;gt; xxx&lt;br /&gt;
+&amp;gt;&lt;br /&gt;
+&amp;gt; 隔行实验&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;斜粗体实验&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;斜粗体实验&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体实验&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;长长长长长的删除线&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listplus&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listreduce&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;+ 子子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子子列表&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;br /&gt;
+3.无空格实验（标号后面无空格为普通文本）&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;行号为4，再次有空格&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接有空格&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&#34;http://google.com/&#34; title=&#34;Google&#34; target=&#34;_blank&#34;&gt;Google&lt;/a&gt; than from &lt;a href=&#34;http://search.yahoo.com/&#34; title=&#34;Yahoo Search&#34; target=&#34;_blank&#34;&gt;Yahoo&lt;/a&gt; or &lt;a href=&#34;http://search.msn.com/&#34; title=&#34;MSN Search&#34; target=&#34;_blank&#34;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Have a try first</title>
+      <link>http://moonye.me/tech/take-a-try-first.3/</link>
+      <pubDate>Sat, 31 Dec 2016 22:29:56 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/take-a-try-first.3/</guid>
+      <description>
+
+&lt;h1 id=&#34;内容模版的语法&#34;&gt;内容模版的语法&lt;/h1&gt;
+
+&lt;h1 id=&#34;配置项&#34;&gt;配置项&lt;/h1&gt;
+
+&lt;h1 id=&#34;markdown练习&#34;&gt;markdown练习&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;试一试。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 试一试。(前面五个空格，有回车，其实只是引用和缩进的简单组合)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;试一试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;/&lt;br /&gt;
+&amp;gt; 引用注释&lt;br /&gt;
+      前面五个空格（无回车）&lt;br /&gt;
+回车实验&lt;br /&gt;
+&amp;gt; xxx&lt;br /&gt;
+&amp;gt;&lt;br /&gt;
+&amp;gt; 隔行实验&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;斜粗体实验&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;斜粗体实验&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体实验&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;长长长长长的删除线&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listplus&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listreduce&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;+ 子子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子子列表&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;br /&gt;
+3.无空格实验（标号后面无空格为普通文本）&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;行号为4，再次有空格&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接有空格&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&#34;http://google.com/&#34; title=&#34;Google&#34; target=&#34;_blank&#34;&gt;Google&lt;/a&gt; than from &lt;a href=&#34;http://search.yahoo.com/&#34; title=&#34;Yahoo Search&#34; target=&#34;_blank&#34;&gt;Yahoo&lt;/a&gt; or &lt;a href=&#34;http://search.msn.com/&#34; title=&#34;MSN Search&#34; target=&#34;_blank&#34;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Have a try first</title>
+      <link>http://moonye.me/tech/take-a-try-first.4/</link>
+      <pubDate>Sat, 31 Dec 2016 22:29:56 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/take-a-try-first.4/</guid>
+      <description>
+
+&lt;h1 id=&#34;内容模版的语法&#34;&gt;内容模版的语法&lt;/h1&gt;
+
+&lt;h1 id=&#34;配置项&#34;&gt;配置项&lt;/h1&gt;
+
+&lt;h1 id=&#34;markdown练习&#34;&gt;markdown练习&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;试一试。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 试一试。(前面五个空格，有回车，其实只是引用和缩进的简单组合)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;试一试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;/&lt;br /&gt;
+&amp;gt; 引用注释&lt;br /&gt;
+      前面五个空格（无回车）&lt;br /&gt;
+回车实验&lt;br /&gt;
+&amp;gt; xxx&lt;br /&gt;
+&amp;gt;&lt;br /&gt;
+&amp;gt; 隔行实验&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;斜粗体实验&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;斜粗体实验&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体实验&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;长长长长长的删除线&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listplus&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listreduce&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;+ 子子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子子列表&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;br /&gt;
+3.无空格实验（标号后面无空格为普通文本）&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;行号为4，再次有空格&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接有空格&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&#34;http://google.com/&#34; title=&#34;Google&#34; target=&#34;_blank&#34;&gt;Google&lt;/a&gt; than from &lt;a href=&#34;http://search.yahoo.com/&#34; title=&#34;Yahoo Search&#34; target=&#34;_blank&#34;&gt;Yahoo&lt;/a&gt; or &lt;a href=&#34;http://search.msn.com/&#34; title=&#34;MSN Search&#34; target=&#34;_blank&#34;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Have a try first</title>
+      <link>http://moonye.me/tech/take-a-try-first.5/</link>
+      <pubDate>Sat, 31 Dec 2016 22:29:56 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/take-a-try-first.5/</guid>
+      <description>
+
+&lt;h1 id=&#34;内容模版的语法&#34;&gt;内容模版的语法&lt;/h1&gt;
+
+&lt;h1 id=&#34;配置项&#34;&gt;配置项&lt;/h1&gt;
+
+&lt;h1 id=&#34;markdown练习&#34;&gt;markdown练习&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;试一试。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 试一试。(前面五个空格，有回车，其实只是引用和缩进的简单组合)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;试一试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;/&lt;br /&gt;
+&amp;gt; 引用注释&lt;br /&gt;
+      前面五个空格（无回车）&lt;br /&gt;
+回车实验&lt;br /&gt;
+&amp;gt; xxx&lt;br /&gt;
+&amp;gt;&lt;br /&gt;
+&amp;gt; 隔行实验&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;斜粗体实验&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;斜粗体实验&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体实验&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;长长长长长的删除线&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listplus&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listreduce&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;+ 子子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子子列表&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;br /&gt;
+3.无空格实验（标号后面无空格为普通文本）&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;行号为4，再次有空格&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接有空格&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&#34;http://google.com/&#34; title=&#34;Google&#34; target=&#34;_blank&#34;&gt;Google&lt;/a&gt; than from &lt;a href=&#34;http://search.yahoo.com/&#34; title=&#34;Yahoo Search&#34; target=&#34;_blank&#34;&gt;Yahoo&lt;/a&gt; or &lt;a href=&#34;http://search.msn.com/&#34; title=&#34;MSN Search&#34; target=&#34;_blank&#34;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Have a try first</title>
+      <link>http://moonye.me/tech/take-a-try-first/</link>
+      <pubDate>Sat, 31 Dec 2016 22:29:56 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/take-a-try-first/</guid>
+      <description>
+
+&lt;h1 id=&#34;内容模版的语法&#34;&gt;内容模版的语法&lt;/h1&gt;
+
+&lt;h1 id=&#34;配置项&#34;&gt;配置项&lt;/h1&gt;
+
+&lt;h1 id=&#34;markdown练习&#34;&gt;markdown练习&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;试一试。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 试一试。(前面五个空格，有回车，其实只是引用和缩进的简单组合)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;试一试。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;/&lt;br /&gt;
+&amp;gt; 引用注释&lt;br /&gt;
+      前面五个空格（无回车）&lt;br /&gt;
+回车实验&lt;br /&gt;
+&amp;gt; xxx&lt;br /&gt;
+&amp;gt;&lt;br /&gt;
+&amp;gt; 隔行实验&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;斜粗体实验&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;斜粗体实验&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体实验&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;长长长长长的删除线&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listplus&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;listreduce&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;三级子列表&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;+ 子子列表&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子子列表&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;有序列表&lt;br /&gt;
+3.无空格实验（标号后面无空格为普通文本）&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;行号为4，再次有空格&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.baidu.com&#34; title=&#34;百度&#34; target=&#34;_blank&#34;&gt;百度链接有空格&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I get 10 times more traffic from &lt;a href=&#34;http://google.com/&#34; title=&#34;Google&#34; target=&#34;_blank&#34;&gt;Google&lt;/a&gt; than from &lt;a href=&#34;http://search.yahoo.com/&#34; title=&#34;Yahoo Search&#34; target=&#34;_blank&#34;&gt;Yahoo&lt;/a&gt; or &lt;a href=&#34;http://search.msn.com/&#34; title=&#34;MSN Search&#34; target=&#34;_blank&#34;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+void main()
+
+{
+
+    cout &amp;lt;&amp;lt; &amp;quot;Hello World!&amp;quot; &amp;lt;&amp;lt; endl;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
