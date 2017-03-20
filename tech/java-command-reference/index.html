@@ -12,24 +12,24 @@
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
     
-    <meta name="description" content="一级标题 二级标题 六级标题 试一试。 试一试。 //引用和缩进的简单组合--引用中的代码 试一试。 更多实验 引用注释 前面五个空格 //无回车 回车实验 xxx 隔行">
+    <meta name="description" content="Java SE 命令工具可以用于处理一些开发任务，比如编译和运行程序；将源代码文件打包到 jar 文件中；给 jar 文件使用安全策略等。下面是 JDK 的全套命令，根据相关功">
 
-<meta name="keywords" content="markdown,test">
+<meta name="keywords" content="java">
 
 
-<meta property="og:title" content="markdown练习 - 吾月">
+<meta property="og:title" content="Java SE 命令清单 - 吾月">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://moonye.me/essay/test/">
+<meta property="og:url" content="http://moonye.me/tech/java-command-reference/">
 <meta property="og:image" content="http://moonye.me/images/default.png">
 <meta property="og:site_name" content="吾月">
-<meta property="og:description" content="一级标题 二级标题 六级标题 试一试。 试一试。 //引用和缩进的简单组合--引用中的代码 试一试。 更多实验 引用注释 前面五个空格 //无回车 回车实验 xxx 隔行">
+<meta property="og:description" content="Java SE 命令工具可以用于处理一些开发任务，比如编译和运行程序；将源代码文件打包到 jar 文件中；给 jar 文件使用安全策略等。下面是 JDK 的全套命令，根据相关功">
 <meta property="og:locale" content="zh-CN">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="吾月">
-<meta name="twitter:url" content="http://moonye.me/essay/test/">
-<meta name="twitter:title" content="markdown练习 - 吾月">
-<meta name="twitter:description" content="一级标题 二级标题 六级标题 试一试。 试一试。 //引用和缩进的简单组合--引用中的代码 试一试。 更多实验 引用注释 前面五个空格 //无回车 回车实验 xxx 隔行">
+<meta name="twitter:url" content="http://moonye.me/tech/java-command-reference/">
+<meta name="twitter:title" content="Java SE 命令清单 - 吾月">
+<meta name="twitter:description" content="Java SE 命令工具可以用于处理一些开发任务，比如编译和运行程序；将源代码文件打包到 jar 文件中；给 jar 文件使用安全策略等。下面是 JDK 的全套命令，根据相关功">
 <meta name="twitter:image" content="http://moonye.me/images/default.png">
 
 
@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/lightgallery/1.3.9/css/lightgallery.min.css">
 <link rel="stylesheet" href="/css/styles.css">
     
-    <title>markdown练习 | 吾月</title>
+    <title>Java SE 命令清单 | 吾月</title>
     
     
 </head>
@@ -97,226 +97,109 @@
     <div class="left-content">
         <div class="ui segments">
     <div class="ui segment">
-        <a id="session-link" class="ui teal right ribbon label" href="/essay/">随笔</a>
-        <h1>markdown练习</h1>
+        <a id="session-link" class="ui blue right ribbon label" href="/tech/">技术</a>
+        <h1>Java SE 命令清单</h1>
     </div>
     <div id="article-info" class="ui segment">
         <div class="ui breadcrumb">
-            <div class="section"><i class="calendar icon"></i> 2017-01-21 15:28</div>
-            <div id="word-count" class="section"><i class="file word outline icon"></i><span>945 字</span></div>
-            <div id="comment-count" class="section underline"><i class="comments icon"></i><a href="http://moonye.me/essay/test/#comments"><span class="ds-thread-count" data-thread-key="b128b7694e4de962e0088bcb1bcb254f" data-count-type="comments"></span></a></div>
+            <div class="section"><i class="calendar icon"></i> 2017-03-11 17:34</div>
+            <div id="word-count" class="section"><i class="file word outline icon"></i><span>1280 字</span></div>
+            <div id="comment-count" class="section underline"><i class="comments icon"></i><a href="http://moonye.me/tech/java-command-reference/#comments"><span class="ds-thread-count" data-thread-key="5151ba8a0c4d274512226806f8262b65" data-count-type="comments"></span></a></div>
             
             <div id="article-tags" class="section underline">
-                <i class="tag icon"></i><a id="article-tag" href="/tags/markdown/">markdown</a> <i class="tag icon"></i><a id="article-tag" href="/tags/test/">test</a> 
+                <i class="tag icon"></i><a id="article-tag" href="/tags/java/">java</a> 
             </div>
             
         </div>
     </div>
     <div id="article-content" class="ui segment">
 
-<h1 id="一级标题">一级标题</h1>
+<p>Java SE 命令工具可以用于处理一些开发任务，比如编译和运行程序；将源代码文件打包到 jar 文件中；给 jar 文件使用安全策略等。下面是 JDK 的全套命令，根据相关功能划分为一下几部分：</p>
 
-<h2 id="二级标题">二级标题</h2>
+<h1 id="创建应用程序">创建应用程序</h1>
 
-<h6 id="六级标题">六级标题</h6>
+<p><code>appletviewer</code> 在浏览器外运行 Applets<br />
+<code>extcheck</code> 检测目标 Java 归档（JAR）文件和当前安装的扩展 JAR 文件之间的版本冲突<br />
+<code>jar</code> 将多个文件合并为单个JAR文件<br />
+<code>java</code> 启动一个 Java 程序<br />
+<code>javac</code> 读取 Java 类和接口定义，并将它们编译成字节码和类文件<br />
+<code>javadoc</code> 从 Java 源文件中生成 API 文档的 HTML 页面<br />
+<code>javah</code> 从Java类生成C头文件和源文件<br />
+<code>javap</code> 分解（Disassembles）一个或多个 class 文件<br />
+<code>jdb</code> 查找并修复 java 程序中的 bug<br />
+<code>jdeps</code> Java 类依赖关系分析器</p>
 
-<hr />
+<h1 id="安全">安全</h1>
 
-<blockquote>
-<p>试一试。</p>
+<p><code>keytool</code> 管理一个存储密钥、X.509证书链和受信任证书的 keystore 数据库<br />
+<code>jarsigner</code> 签名或者验证 JAR 文件<br />
+<code>policytool</code> 根据用户在图形工具上的输入，读写一个纯文本的策略文件</p>
 
-<pre><code> 试一试。 //引用和缩进的简单组合--引用中的代码
-</code></pre>
+<h1 id="国际化">国际化</h1>
 
-<p>试一试。</p>
-</blockquote>
+<p><code>native2ascii</code> 将任何非 ASCII 字符集的字符转换为 ASCII 或者 Unicode 转义(\uxxxx)字符，反之亦然。</p>
 
-<p>更多实验</p>
+<h1 id="远程方法调用-rmi">远程方法调用（RMI）</h1>
 
-<blockquote>
-<p>引用注释<br />
-     前面五个空格 //无回车</p>
-</blockquote>
+<p><code>rmic</code> 为使用Java远程方法协议（JRMP）或Internet Inter-Orb协议（IIOP）的远程对象生成存根，框架和绑定类。还生成对象管理组（OMG）接口定义语言（IDL）。<br />
+<code>rmiregistry</code> 在当前主机上的指定端口上启动远程对象注册表。<br />
+<code>rmid</code> 启动激活系统守护程序，该守护程序使对象能够在Java虚拟机（JVM）中注册和激活。<br />
+<code>serialver</code> 返回指定类的串行版本UID。</p>
 
-<p>回车实验</p>
+<h1 id="java-idl-和-rmi-iiop">Java IDL 和 RMI­IIOP</h1>
 
-<blockquote>
-<p>xxx</p>
+<p><code>tnameserv</code> 启动Java接口定义语言（IDL）名称服务器。<br />
+<code>idlj</code> 为给定的接口定义语言（IDL）文件生成Java绑定。<br />
+<code>orbd</code> 使客户端能够在CORBA环境中定位和调用服务器上的持久对象。<br />
+<code>servertool</code> 为应用程序员注册，注销，启动和关闭服务器提供一个易于使用的界面。</p>
 
-<p>隔行实验</p>
-</blockquote>
+<h1 id="部署应用程序和-applets">部署应用程序和 Applets</h1>
 
-<hr />
+<p><code>pack200</code> 将JAR文件打包到用于Web部署的压缩pack200文件中。<br />
+<code>unpack200</code> 将由pack200（1）生成的打包文件转换为用于Web部署的JAR文件。</p>
 
-<p><em>斜体</em><br />
-<em>斜体</em></p>
+<h1 id="java-web-start">Java Web Start</h1>
 
-<p><strong>粗体</strong><br />
-<strong>粗体</strong></p>
+<p><code>javaws</code> 启动Java Web Start。</p>
 
-<p><em><strong>斜粗体实验</strong></em><br />
-<strong><em>斜粗体实验</em></strong><br />
-<strong><em>粗斜体实验</em></strong></p>
+<h1 id="监控-java-应用程序">监控 Java 应用程序</h1>
 
-<p><del>长长长长长的删除线</del></p>
+<p><code>jconsole</code> 启动图形控制台，允许您监视和管理Java应用程序。<br />
+<code>jvisualvm</code> 对Java应用程序进行可视监视，故障排除和配置文件。</p>
 
-<hr />
+<h1 id="监控-jvm">监控 JVM</h1>
 
-<ul>
-<li>列表<br /></li>
-<li>listplus<br /></li>
-<li>listreduce<br />
+<p><code>jps</code> 实验。列出目标系统上已检测的Java虚拟机（JVM）。<br />
+<code>jstat</code> 实验。监视JVM统计信息<br />
+<code>jstatd</code> 实验。监视JVM并启用远程监视工具以附加到JVM。<br />
+<code>jmc</code> 启动Java Mission Controla工具，用于监视和管理正在运行的Java应用程序和JVM。</p>
 
-<ul>
-<li>子列表<br />
+<h1 id="web-服务">Web 服务</h1>
 
-<ul>
-<li>三级子列表<br /></li>
-<li>三级子列表<br /></li>
-</ul></li>
-</ul></li>
-<li>+ 子子列表<br />
+<p><code>schemagen</code> 为在Java类中引用的每个名称空间生成一个图式。<br />
+<code>wsgen</code> 读取Web服务端点实施（SEI）类，并生成Web服务部署和调用所需的所有工件。<br />
+<code>wsimport</code> 生成可以打包在Web应用程序归档（WAR）文件中的JAX-WS可移植工件，并提供Ant任务。<br />
+<code>xjc</code> 将一个 XML schema 文件编译到一个全注解的 Java classes 中</p>
 
-<ul>
-<li>子子列表<br />
-<br /></li>
-</ul></li>
-</ul>
+<h1 id="排查故障">排查故障</h1>
 
-<hr />
+<p><code>jcmd</code> 将诊断命令请求发送给运行中的 JVM<br />
+<code>jinfo</code> 实验性的，生成配置信息<br />
+<code>jhat</code> 实验性的，分析 java 堆<br />
+<code>jhat</code> 实验性的，打印一个进程、核心文件或者远程调试服务器的共享对象的内存映射或者堆内存细节<br />
+<code>jsadebugd</code> 实验性的，作为调试服务器绑定到一个 java 进程或者核心文件上<br />
+<code>jstack</code> 实验性的，打印一个进程、核心文件或者远程调试服务器的 Java 线程的堆栈跟踪</p>
 
-<ol>
-<li>有序列表<br /></li>
-<li>有序列表<br />
-3.无空格实验（标号后面无空格为普通文本）<br /></li>
-<li>行号为4，再次有空格<br />
-<br /></li>
-</ol>
+<h1 id="脚本">脚本</h1>
 
-<hr />
-
-<p><a href="http://www.baidu.com" title="百度" target="_blank">百度链接</a><br />
-<a href="http://www.baidu.com" title="百度" target="_blank">百度链接有空格</a></p>
-
-<p>I get 10 times more traffic from <a href="http://google.com/" title="Google" target="_blank">Google</a> than from <a href="http://search.yahoo.com/" title="Yahoo Search" target="_blank">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search" target="_blank">MSN</a>.</p>
-
-<hr />
-
-<p>试一下行内公式：<code>$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$</code></p>
-
-<div>$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$</div>
-
-<div>$$y(x)=\int \theta(x)\mathrm{d}x + C_2 =\int \left(\int \frac{M(x)}{EI} \mathrm{d}x + C_1 \right)\mathrm{d}x + C_2 \tag{2-4}$$</div>
-
-<hr />
-
-<p>试试行内代码，<code>hugo server</code>用于启动网站。<code>hugo</code>本身则会生成<code>public</code>文件夹，文件夹内是静态网页内容。</p>
-
-<p>试试图片</p>
-
-
-<figure class="lg-img " data-src="/img/night-moon.png" data-download-url="false" data-sub-html=".caption">
-    <img class="ui rounded image" src="/img/night-moon.png">
-    <div style="display:none" class="caption">
-        <h4>Night Moon</h4>
-        
-    </div>
-    <div class="ui dimmer">
-        <div class="content">
-            <div class="center">
-                <i class="fa fa-eye"></i>
-            </div>
-        </div>
-    </div>
-</figure>
-
-
-<figure class="lg-img right floated" data-src="/img/night-moon.png" data-download-url="false" data-sub-html=".caption">
-    <img class="ui rounded image" src="/img/night-moon.png">
-    <div style="display:none" class="caption">
-        <h4>Night Moon</h4>
-        
-    </div>
-    <div class="ui dimmer">
-        <div class="content">
-            <div class="center">
-                <i class="fa fa-eye"></i>
-            </div>
-        </div>
-    </div>
-</figure>
-
-<p>总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈</p>
-
-
-<figure class="lg-img left floated" data-src="/img/moon.jpg" data-download-url="false" data-sub-html=".caption">
-    <img class="ui rounded image" src="/img/moon.jpg">
-    <div style="display:none" class="caption">
-        <h4>Moon</h4>
-        
-        <p>何夜无月</p>
-        
-    </div>
-    <div class="ui dimmer">
-        <div class="content">
-            <div class="center">
-                <i class="fa fa-eye"></i>
-            </div>
-        </div>
-    </div>
-</figure>
-
-<p>总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈</p>
-
-
-<figure class="lg-img right floated" data-src="/img/night-moon.png" data-download-url="false" data-sub-html=".caption">
-    <img class="ui rounded image" src="/img/night-moon.png">
-    <div style="display:none" class="caption">
-        <h4>Night Moon</h4>
-        
-    </div>
-    <div class="ui dimmer">
-        <div class="content">
-            <div class="center">
-                <i class="fa fa-eye"></i>
-            </div>
-        </div>
-    </div>
-</figure>
-
-<p>总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈，总想搞前端的后端多半是个假全栈</p>
-
-<hr />
-
-<div class="code-block">
-    <pre><code><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br></code></pre><pre><code class="language-C++">#include &lt;iostream&gt;
-using namespace std;
-// just a test
-void main()
-{
-    cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; endl;
-}
-void main()
-{
-    cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; endl;
-}
-void main()
-{
-    cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; endl;
-}
-void main()
-{
-    cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; endl;
-}
-</code></pre>
-
-</div>
+<p><code>jrunscript</code> 实验性的，运行一个支持交互式或者批量式的命令行脚本shell<br />
+<code>jss</code> 调用 Nashorn 引擎。您可以使用它来解释一个或多个脚本文件，或运行交互式shell</p>
 </div>
 </div>
         
         
 <div id="comments">
-    <div class="ds-thread" data-thread-key="b128b7694e4de962e0088bcb1bcb254f" data-title="markdown练习" data-url="http://moonye.me/essay/test/"></div>
+    <div class="ds-thread" data-thread-key="5151ba8a0c4d274512226806f8262b65" data-title="Java SE 命令清单" data-url="http://moonye.me/tech/java-command-reference/"></div>
 </div>
 
     </div>
@@ -449,22 +332,18 @@ void main()
             <button id="toc-button" class="ui top attached blue button">文章目录</button>
             <nav id="TableOfContents">
 <ul>
-<li><a href="#一级标题">一级标题</a>
-<ul>
-<li><a href="#二级标题">二级标题</a>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#六级标题">六级标题</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
+<li><a href="#创建应用程序">创建应用程序</a></li>
+<li><a href="#安全">安全</a></li>
+<li><a href="#国际化">国际化</a></li>
+<li><a href="#远程方法调用-rmi">远程方法调用（RMI）</a></li>
+<li><a href="#java-idl-和-rmi-iiop">Java IDL 和 RMI­IIOP</a></li>
+<li><a href="#部署应用程序和-applets">部署应用程序和 Applets</a></li>
+<li><a href="#java-web-start">Java Web Start</a></li>
+<li><a href="#监控-java-应用程序">监控 Java 应用程序</a></li>
+<li><a href="#监控-jvm">监控 JVM</a></li>
+<li><a href="#web-服务">Web 服务</a></li>
+<li><a href="#排查故障">排查故障</a></li>
+<li><a href="#脚本">脚本</a></li>
 </ul>
 </nav>
         </div>

@@ -6,8 +6,99 @@
     <description>Recent content on 吾月</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 10 Mar 2017 22:15:38 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 11 Mar 2017 17:34:39 +0800</lastBuildDate>
     <atom:link href="http://moonye.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Java SE 命令清单</title>
+      <link>http://moonye.me/tech/java-command-reference/</link>
+      <pubDate>Sat, 11 Mar 2017 17:34:39 +0800</pubDate>
+      
+      <guid>http://moonye.me/tech/java-command-reference/</guid>
+      <description>
+
+&lt;p&gt;Java SE 命令工具可以用于处理一些开发任务，比如编译和运行程序；将源代码文件打包到 jar 文件中；给 jar 文件使用安全策略等。下面是 JDK 的全套命令，根据相关功能划分为一下几部分：&lt;/p&gt;
+
+&lt;h1 id=&#34;创建应用程序&#34;&gt;创建应用程序&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;appletviewer&lt;/code&gt; 在浏览器外运行 Applets&lt;br /&gt;
+&lt;code&gt;extcheck&lt;/code&gt; 检测目标 Java 归档（JAR）文件和当前安装的扩展 JAR 文件之间的版本冲突&lt;br /&gt;
+&lt;code&gt;jar&lt;/code&gt; 将多个文件合并为单个JAR文件&lt;br /&gt;
+&lt;code&gt;java&lt;/code&gt; 启动一个 Java 程序&lt;br /&gt;
+&lt;code&gt;javac&lt;/code&gt; 读取 Java 类和接口定义，并将它们编译成字节码和类文件&lt;br /&gt;
+&lt;code&gt;javadoc&lt;/code&gt; 从 Java 源文件中生成 API 文档的 HTML 页面&lt;br /&gt;
+&lt;code&gt;javah&lt;/code&gt; 从Java类生成C头文件和源文件&lt;br /&gt;
+&lt;code&gt;javap&lt;/code&gt; 分解（Disassembles）一个或多个 class 文件&lt;br /&gt;
+&lt;code&gt;jdb&lt;/code&gt; 查找并修复 java 程序中的 bug&lt;br /&gt;
+&lt;code&gt;jdeps&lt;/code&gt; Java 类依赖关系分析器&lt;/p&gt;
+
+&lt;h1 id=&#34;安全&#34;&gt;安全&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;keytool&lt;/code&gt; 管理一个存储密钥、X.509证书链和受信任证书的 keystore 数据库&lt;br /&gt;
+&lt;code&gt;jarsigner&lt;/code&gt; 签名或者验证 JAR 文件&lt;br /&gt;
+&lt;code&gt;policytool&lt;/code&gt; 根据用户在图形工具上的输入，读写一个纯文本的策略文件&lt;/p&gt;
+
+&lt;h1 id=&#34;国际化&#34;&gt;国际化&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;native2ascii&lt;/code&gt; 将任何非 ASCII 字符集的字符转换为 ASCII 或者 Unicode 转义(\uxxxx)字符，反之亦然。&lt;/p&gt;
+
+&lt;h1 id=&#34;远程方法调用-rmi&#34;&gt;远程方法调用（RMI）&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;rmic&lt;/code&gt; 为使用Java远程方法协议（JRMP）或Internet Inter-Orb协议（IIOP）的远程对象生成存根，框架和绑定类。还生成对象管理组（OMG）接口定义语言（IDL）。&lt;br /&gt;
+&lt;code&gt;rmiregistry&lt;/code&gt; 在当前主机上的指定端口上启动远程对象注册表。&lt;br /&gt;
+&lt;code&gt;rmid&lt;/code&gt; 启动激活系统守护程序，该守护程序使对象能够在Java虚拟机（JVM）中注册和激活。&lt;br /&gt;
+&lt;code&gt;serialver&lt;/code&gt; 返回指定类的串行版本UID。&lt;/p&gt;
+
+&lt;h1 id=&#34;java-idl-和-rmi-iiop&#34;&gt;Java IDL 和 RMI­IIOP&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;tnameserv&lt;/code&gt; 启动Java接口定义语言（IDL）名称服务器。&lt;br /&gt;
+&lt;code&gt;idlj&lt;/code&gt; 为给定的接口定义语言（IDL）文件生成Java绑定。&lt;br /&gt;
+&lt;code&gt;orbd&lt;/code&gt; 使客户端能够在CORBA环境中定位和调用服务器上的持久对象。&lt;br /&gt;
+&lt;code&gt;servertool&lt;/code&gt; 为应用程序员注册，注销，启动和关闭服务器提供一个易于使用的界面。&lt;/p&gt;
+
+&lt;h1 id=&#34;部署应用程序和-applets&#34;&gt;部署应用程序和 Applets&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;pack200&lt;/code&gt; 将JAR文件打包到用于Web部署的压缩pack200文件中。&lt;br /&gt;
+&lt;code&gt;unpack200&lt;/code&gt; 将由pack200（1）生成的打包文件转换为用于Web部署的JAR文件。&lt;/p&gt;
+
+&lt;h1 id=&#34;java-web-start&#34;&gt;Java Web Start&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;javaws&lt;/code&gt; 启动Java Web Start。&lt;/p&gt;
+
+&lt;h1 id=&#34;监控-java-应用程序&#34;&gt;监控 Java 应用程序&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;jconsole&lt;/code&gt; 启动图形控制台，允许您监视和管理Java应用程序。&lt;br /&gt;
+&lt;code&gt;jvisualvm&lt;/code&gt; 对Java应用程序进行可视监视，故障排除和配置文件。&lt;/p&gt;
+
+&lt;h1 id=&#34;监控-jvm&#34;&gt;监控 JVM&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;jps&lt;/code&gt; 实验。列出目标系统上已检测的Java虚拟机（JVM）。&lt;br /&gt;
+&lt;code&gt;jstat&lt;/code&gt; 实验。监视JVM统计信息&lt;br /&gt;
+&lt;code&gt;jstatd&lt;/code&gt; 实验。监视JVM并启用远程监视工具以附加到JVM。&lt;br /&gt;
+&lt;code&gt;jmc&lt;/code&gt; 启动Java Mission Controla工具，用于监视和管理正在运行的Java应用程序和JVM。&lt;/p&gt;
+
+&lt;h1 id=&#34;web-服务&#34;&gt;Web 服务&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;schemagen&lt;/code&gt; 为在Java类中引用的每个名称空间生成一个图式。&lt;br /&gt;
+&lt;code&gt;wsgen&lt;/code&gt; 读取Web服务端点实施（SEI）类，并生成Web服务部署和调用所需的所有工件。&lt;br /&gt;
+&lt;code&gt;wsimport&lt;/code&gt; 生成可以打包在Web应用程序归档（WAR）文件中的JAX-WS可移植工件，并提供Ant任务。&lt;br /&gt;
+&lt;code&gt;xjc&lt;/code&gt; 将一个 XML schema 文件编译到一个全注解的 Java classes 中&lt;/p&gt;
+
+&lt;h1 id=&#34;排查故障&#34;&gt;排查故障&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;jcmd&lt;/code&gt; 将诊断命令请求发送给运行中的 JVM&lt;br /&gt;
+&lt;code&gt;jinfo&lt;/code&gt; 实验性的，生成配置信息&lt;br /&gt;
+&lt;code&gt;jhat&lt;/code&gt; 实验性的，分析 java 堆&lt;br /&gt;
+&lt;code&gt;jhat&lt;/code&gt; 实验性的，打印一个进程、核心文件或者远程调试服务器的共享对象的内存映射或者堆内存细节&lt;br /&gt;
+&lt;code&gt;jsadebugd&lt;/code&gt; 实验性的，作为调试服务器绑定到一个 java 进程或者核心文件上&lt;br /&gt;
+&lt;code&gt;jstack&lt;/code&gt; 实验性的，打印一个进程、核心文件或者远程调试服务器的 Java 线程的堆栈跟踪&lt;/p&gt;
+
+&lt;h1 id=&#34;脚本&#34;&gt;脚本&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;jrunscript&lt;/code&gt; 实验性的，运行一个支持交互式或者批量式的命令行脚本shell&lt;br /&gt;
+&lt;code&gt;jss&lt;/code&gt; 调用 Nashorn 引擎。您可以使用它来解释一个或多个脚本文件，或运行交互式shell&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>设置 Class Path</title>

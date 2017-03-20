@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://moonye.me/tech/java-command-reference/</loc>
+    <lastmod>2017-03-11T17:34:39+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://moonye.me/tech/setting-the-class-path/</loc>
     <lastmod>2017-03-10T22:15:38+08:00</lastmod>
   </url>
@@ -54,13 +59,13 @@
   
   <url>
     <loc>http://moonye.me/tags/java/</loc>
-    <lastmod>2017-03-10T22:15:38+08:00</lastmod>
+    <lastmod>2017-03-11T17:34:39+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://moonye.me/series/java-se-tools-reference/</loc>
-    <lastmod>2017-03-06T00:19:52+08:00</lastmod>
+    <lastmod>2017-03-11T17:34:39+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,7 +99,7 @@
   
   <url>
     <loc>http://moonye.me/tech/</loc>
-    <lastmod>2017-03-10T22:15:38+08:00</lastmod>
+    <lastmod>2017-03-11T17:34:39+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -112,7 +117,7 @@
   
   <url>
     <loc>http://moonye.me/</loc>
-    <lastmod>2017-03-10T22:15:38+08:00</lastmod>
+    <lastmod>2017-03-11T17:34:39+08:00</lastmod>
     <priority>0</priority>
   </url>
   
