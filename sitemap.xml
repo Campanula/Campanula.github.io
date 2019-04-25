@@ -1,123 +1,108 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://moonye.me/tech/java-command-reference/</loc>
+    <loc>https://campanula.github.io/tech/java-command-reference/</loc>
     <lastmod>2017-03-11T17:34:39+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://moonye.me/tech/setting-the-class-path/</loc>
+    <loc>https://campanula.github.io/tech/setting-the-class-path/</loc>
     <lastmod>2017-03-10T22:15:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://moonye.me/tech/how-classes-are-found/</loc>
+    <loc>https://campanula.github.io/tech/how-classes-are-found/</loc>
     <lastmod>2017-03-06T00:19:52+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://moonye.me/essay/testTOC/</loc>
+    <loc>https://campanula.github.io/essay/testtoc/</loc>
     <lastmod>2017-02-19T17:47:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://moonye.me/tech/vim-quick/</loc>
+    <loc>https://campanula.github.io/tech/vim-quick/</loc>
     <lastmod>2017-02-12T22:59:42+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://moonye.me/essay/test/</loc>
+    <loc>https://campanula.github.io/essay/test/</loc>
     <lastmod>2017-01-21T15:28:18+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://moonye.me/archive/</loc>
+    <loc>https://campanula.github.io/archive/</loc>
   </url>
   
   <url>
-    <loc>http://moonye.me/index_json/</loc>
+    <loc>https://campanula.github.io/index_json/</loc>
   </url>
   
   <url>
-    <loc>http://moonye.me/tags/class/</loc>
+    <loc>https://campanula.github.io/</loc>
+    <lastmod>2017-03-11T17:34:39+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://campanula.github.io/tags/class/</loc>
     <lastmod>2017-03-10T22:15:38+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://moonye.me/essay/</loc>
+    <loc>https://campanula.github.io/essay/</loc>
     <lastmod>2017-02-19T17:47:26+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://moonye.me/tags/jar/</loc>
+    <loc>https://campanula.github.io/tags/jar/</loc>
     <lastmod>2017-03-10T22:15:38+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://moonye.me/tags/java/</loc>
+    <loc>https://campanula.github.io/tags/java/</loc>
     <lastmod>2017-03-11T17:34:39+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://moonye.me/series/java-se-tools-reference/</loc>
-    <lastmod>2017-03-11T17:34:39+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://moonye.me/tags/jre/</loc>
+    <loc>https://campanula.github.io/tags/jre/</loc>
     <lastmod>2017-03-10T22:15:38+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://moonye.me/tags/jvm/</loc>
+    <loc>https://campanula.github.io/tags/jvm/</loc>
     <lastmod>2017-03-06T00:19:52+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://moonye.me/tags/markdown/</loc>
+    <loc>https://campanula.github.io/tags/markdown/</loc>
     <lastmod>2017-02-19T17:47:26+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://moonye.me/series/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://moonye.me/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://moonye.me/tech/</loc>
+    <loc>https://campanula.github.io/tech/</loc>
     <lastmod>2017-03-11T17:34:39+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://moonye.me/tags/test/</loc>
+    <loc>https://campanula.github.io/tags/test/</loc>
     <lastmod>2017-02-19T17:47:26+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://moonye.me/tags/vim/</loc>
+    <loc>https://campanula.github.io/tags/vim/</loc>
     <lastmod>2017-02-12T22:59:42+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://moonye.me/</loc>
-    <lastmod>2017-03-11T17:34:39+08:00</lastmod>
     <priority>0</priority>
   </url>
   
